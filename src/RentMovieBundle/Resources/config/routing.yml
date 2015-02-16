@@ -1,0 +1,6 @@
+rent_movie_main:
+    path:     /main
+    defaults: { _controller: RentMovieBundle:Default:main }
+rent_movie_register:
+    path:     /registration
+    defaults: { _controller: RentMovieBundle:Default:registration }
