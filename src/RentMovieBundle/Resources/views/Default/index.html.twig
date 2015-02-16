@@ -4,20 +4,179 @@
 		<title>Film Rental</title>
 		<meta charset="UTF-8">
 		<link href="{{ asset('bundles/rentmovie/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-		<form class="form-horizontal"  enctype="multipart/form-data" align="right" method="POST" action="{{path('rent_movie_main')}}">
-			<input class="input" type="text"  name="login"  placeholder="Login">	
-			<input class="input" type="password" name="password"  placeholder="Password">
-			<button type="submit" class="btn btn-primary">Login</button>
-			<a href="{{path('rent_movie_register')}}">Register</a>
-		</form>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+		<style>
+			('.carousel').carousel()
+		</style>
 		
-		{%if name is defined%}
-			<div class="alert">
-				<strong>hello {{name}}</strong>
+		<style>
+			h4 {color:orange;
+			font-size:2em;
+			font-variant: small-caps;}
+			p {font-family:serif;}
+			body{margin: 25px 5px;}
+		</style>
+		
+	</head>
+	<body>	
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span2">
+					<h4 align="center">Most borrowed</h4>
+					<div class="container"><br>
+						<div id="myCarouselBorrowed" class="carousel slide" data-ride="carousel" style="width:200px">
+						
+						<ol class="carousel-indicators">
+							<li data-target="#myCarouselBorrowed" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarouselBorrowed" data-slide-to="1"></li>
+							<li data-target="#myCarouselBorrowed" data-slide-to="2"></li>
+						</ol>
+
+						<div class="carousel-inner" role="listbox">
+
+						<div class="item active">
+							<img src="{{ asset('bundles/rentmovie/images/lucy.jpg') }}">
+						</div>
+						<div class="item">
+							<img src="{{ asset('bundles/rentmovie/images/world.jpg') }}" >
+						</div>
+						<div class="item">
+							<img src="{{ asset('bundles/rentmovie/images/game.jpg') }}">
+						</div>
+  
+						</div>
+    
+						<a class="carousel-control left" href="#myCarouselBorrowed" data-slide="prev">&lsaquo;</a>
+						<a class="carousel-control right" href="#myCarouselBorrowed" data-slide="next">&rsaquo;</a>
+						</div>
+					</div>
+						
+					<h4 align="center">Most reviewed</h4>
+					<div class="container"><br>
+						<div id="myCarouselReviewed" class="carousel slide" data-ride="carousel" style="width:200px">
+						
+						<ol class="carousel-indicators">
+							<li data-target="#myCarouselReviewed" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarouselReviewed" data-slide-to="1"></li>
+							<li data-target="#myCarouselReviewed" data-slide-to="2"></li>
+						</ol>
+
+						<div class="carousel-inner" role="listbox">
+
+						<div class="item active">
+							<img src="{{ asset('bundles/rentmovie/images/hobbit1.jpg') }}">
+						</div>
+						<div class="item">
+							<img src="{{ asset('bundles/rentmovie/images/bean.jpeg') }}" >
+						</div>
+						<div class="item">
+							<img src="{{ asset('bundles/rentmovie/images/dragon.jpg') }}">
+						</div>
+  
+						</div>
+    
+						<a class="carousel-control left" href="#myCarouselReviewed" data-slide="prev">&lsaquo;</a>
+						<a class="carousel-control right" href="#myCarouselReviewed" data-slide="next">&rsaquo;</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="span10">
+					<form class="form-horizontal"  enctype="multipart/form-data" align="right" method="POST" action="{{path('rent_movie_main')}}">
+						<input class="input" type="text"  name="login"  placeholder="Login">	
+						<input class="input" type="password" name="password"  placeholder="Password">
+						<button type="submit" class="btn btn-primary">Login</button>
+						<a href="{{path('rent_movie_register')}}">Register</a>
+					</form>
+					
+					{%if name is defined%}
+						<div class="alert">
+							<strong>hello {{name}}</strong>
+						</div>
+					{%endif%}
+
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#">Melodrama</a></li>
+						<li><a href="#">Comedy</a></li>
+						<li><a href="#">Drama</a></li>
+						<li><a href="#">Horror</a></li>
+						<li><a href="#">Fantasy</a></li>
+						<li><a href="#">Science fiction</a></li>
+						<li><a href="#">Cartoons</a></li>
+					</ul>
+					
+					<div class="span8">
+						<div class="span4">
+							<p align="center">Paul</p>
+							<img src="{{ asset('bundles/rentmovie/images/paul.jpg') }}"><br/>
+							<p align="center">Atonement</p>
+							<img src="{{ asset('bundles/rentmovie/images/atonement.jpg') }}"><br/>
+							<p align="center">How to train your dragon</p>
+							<img src="{{ asset('bundles/rentmovie/images/dragon.jpg') }}"><br/>
+							<p align="center">Lucy</p>
+							<img src="{{ asset('bundles/rentmovie/images/lucy.jpg') }}"><br/>
+							<p align="center">Mr. Bean</p>
+							<img src="{{ asset('bundles/rentmovie/images/bean.jpeg') }}"><br/>
+						</div>
+						<div class="span4">
+							<p align="center">Penguins of Madagascar</p>
+							<img src="{{ asset('bundles/rentmovie/images/penguins.jpg') }}"><br/>
+							<p align="center">The Hobbit: The Desolation of Smaug</p>
+							<img src="{{ asset('bundles/rentmovie/images/hobbit2.jpg') }}"><br/>
+							<p align="center">The Conjuring</p>
+							<img src="{{ asset('bundles/rentmovie/images/conjuring.jpg') }}"><br/>
+							<p align="center">Jurassic World</p>
+							<img src="{{ asset('bundles/rentmovie/images/world.jpg') }}"><br/>
+							<p align="center">A Thousand Words</p>
+							<img src="{{ asset('bundles/rentmovie/images/words.jpg') }}"><br/>
+						</div>
+						<div class="span4">
+							<p align="center">Sinister</p>
+							<img src="{{ asset('bundles/rentmovie/images/sinister.jpg') }}"><br/>
+							<p align="center">The Imitation Game </p>
+							<img src="{{ asset('bundles/rentmovie/images/game.jpg') }}"><br/>
+							<p align="center">A Beautiful Mind </p>
+							<img src="{{ asset('bundles/rentmovie/images/mind.jpg') }}"><br/>
+							<p align="center">Pride and Prejudice</p>
+							<img src="{{ asset('bundles/rentmovie/images/pride.jpg') }}"><br/>
+							<p align="center">The Hobbit: An Unexpected Journey</p>
+							<img src="{{ asset('bundles/rentmovie/images/hobbit1.jpg') }}"><br/>
+						</div>
+					</div>
+					<div class="span3">
+						<h4 align="center">Trailers list</h4>
+						<div style="overflow:scroll;  width: 320px; height: 600px;">
+						<p>Mr. Bean</p>
+						<video width="300" controls>
+							<source src="{{ asset('bundles/rentmovie/video/bean.mp4') }}" type="video/mp4">
+						</video>
+						<p>Imitation game</p>
+						<video width="300" controls>
+							<source src="{{ asset('bundles/rentmovie/video/game.mp4') }}" type="video/mp4">
+						</video>
+						<p>The Hobbit: The Desolation of Smaug</p>
+						<video width="300" controls>
+							<source src="{{ asset('bundles/rentmovie/video/hobbit2.mp4') }}" type="video/mp4">
+						</video>
+						<p>Lucy</p>
+						<video width="300" controls>
+							<source src="{{ asset('bundles/rentmovie/video/lucy.mp4') }}" type="video/mp4">
+						</video>
+						<p>The Penguins of Madagascar</p>
+						<video width="300" controls>
+							<source src="{{ asset('bundles/rentmovie/video/penguins.mp4') }}" type="video/mp4">
+						</video>
+						<p>A Jurassic World</p>
+						<video width="300" controls>
+							<source src="{{ asset('bundles/rentmovie/video/world.mp4') }}" type="video/mp4">
+						</video>
+						</div>
+					</div>
+				</div>
 			</div>
-		{%endif%}
+		</div>
 	</body>
 </HTML>
-
