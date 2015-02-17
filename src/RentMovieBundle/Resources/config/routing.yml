@@ -4,3 +4,24 @@ rent_movie_main:
 rent_movie_register:
     path:     /registration
     defaults: { _controller: RentMovieBundle:Default:registration }
+melodrama:
+    path:     /melodrama
+    defaults: { _controller: RentMovieBundle:Default:melodrama}
+comedy:
+    path:     /comedy
+    defaults: { _controller: RentMovieBundle:Default:comedy}
+drama:
+    path:     /drama
+    defaults: { _controller: RentMovieBundle:Default:drama}
+horror:
+    path:     /horror
+    defaults: { _controller: RentMovieBundle:Default:horror}
+fantasy:
+    path:     /fantasy
+    defaults: { _controller: RentMovieBundle:Default:fantasy}
+science:
+    path:     /science
+    defaults: { _controller: RentMovieBundle:Default:science}
+cartoon:
+    path:     /cartoon
+    defaults: { _controller: RentMovieBundle:Default:cartoon}

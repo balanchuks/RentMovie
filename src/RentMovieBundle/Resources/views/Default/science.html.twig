@@ -1,0 +1,58 @@
+{% extends 'RentMovieBundle::layout.html.twig'%}
+
+{% block links %}
+<li><a href="#">Home</a></li>
+  <li><a href="{{ path('melodrama')}}">Melodrama</a></li>
+  <li><a href="{{ path('comedy')}}">Comedy</a></li>
+  <li><a href="{{ path('drama')}}">Drama</a></li>
+  <li><a href="{{ path('horror')}}">Horror</a></li>
+  <li><a href="{{ path('fantasy')}}">Fantasy</a></li>
+  <li class="active"><a href="{{ path('science')}}">Science fiction</a></li>
+  <li><a href="{{ path('cartoon')}}">Cartoons</a></li>
+ {% endblock %} 
+ 
+ 
+ {% block quote %}
+ "I think science fiction helps us think about possibilities, to speculate - 
+ it helps us look at our society from a different perspective. It lets us
+ look at our mores, using science as the backdrop, as the game changer."
+ {% endblock %}
+ 
+  {% block author %}
+   Mae Jemison
+ {% endblock %}
+ 
+ {% block image %}
+  <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/lucy.jpg') }}" alt="">
+  {% endblock %}
+  
+  
+  {% block title %}   
+   Lucy
+  {% endblock %}
+  
+  {% block year %}   
+      2014
+  {% endblock %}
+  
+  {% block description %}  
+    A woman, accidentally caught in a dark deal, turns the tables on her captors and transforms into a merciless warrior evolved beyond human logic.
+  {% endblock %}
+  
+  
+    {% block title1 %}   
+   Jurassic World
+  {% endblock %}
+  
+  {% block year1 %}   
+      2015
+  {% endblock %}
+  
+  {% block description1 %}  
+      Twenty-two years after the events of Park Jurassic (1993), Isla Nublar now features a fully functioning dinosaur themepark, Jurassic World, as originally envisioned by John Hammond. After 10 years of operation and visitor rates declining, in order to fulfill a corporate mandate,
+	  a new attraction is created to re-spark visitor's interest, which backfires horribly.
+  {% endblock %}
+  
+  {% block image1 %}   
+  <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/world.jpg') }}" alt="">
+  {% endblock %} 
