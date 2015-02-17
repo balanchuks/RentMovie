@@ -1,0 +1,73 @@
+{% extends 'RentMovieBundle::layout.html.twig'%}
+
+{% block links %}
+   <li><a href="#">Home</a></li>
+  <li><a href="{{ path('melodrama')}}">Melodrama</a></li>
+  <li class="active"><a href="{{ path('comedy')}}">Comedy</a></li>
+  <li><a href="{{ path('drama')}}">Drama</a></li>
+  <li><a href="{{ path('horror')}}">Horror</a></li>
+  <li><a href="{{ path('fantasy')}}">Fantasy</a></li>
+  <li><a href="{{ path('science')}}">Science fiction</a></li>
+  <li><a href="{{ path('cartoon')}}">Cartoons</a></li>
+ {% endblock %} 
+ 
+ 
+ {% block quote %}
+ "The only honest art form is laughter, comedy. You can't fake it... try to fake three laughs in an hour -- ha ha ha ha ha -- they'll take you away, man. You can't."
+ {% endblock %}
+ 
+  {% block author %}
+Lenny Bruce
+ {% endblock %}
+ 
+ {% block image %}
+  <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/bean.jpg') }}" alt="">
+  {% endblock %}
+  
+  
+  {% block title %}   
+  Mr Bean
+  {% endblock %}
+  
+  {% block year %}   
+      1997
+  {% endblock %}
+  
+  {% block description %}  
+                 The bumbling Mr. Bean travels to America when he is given the responsibility of bringing a highly valuable painting to a Los Angeles museum.
+  {% endblock %}
+  
+  
+    {% block title1 %}   
+   A Thousand Words
+  {% endblock %}
+  
+  {% block year1 %}   
+      2012
+  {% endblock %}
+  
+  {% block description1 %}  
+               After stretching the truth on a deal with a spiritual guru, literary agent Jack McCall finds a Bodhi tree on his property.
+			   Its appearance holds a valuable lesson on the consequences of every word we speak.
+  {% endblock %}
+  
+  {% block image1 %}   
+  <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/words.jpg') }}" alt="">
+  {% endblock %} 
+  
+  {% block image2 %}
+  <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/paul.jpg') }}" alt="">
+  {% endblock %}
+  
+  
+  {% block title2 %}   
+       Paul
+  {% endblock %}
+  
+  {% block year2 %}   
+      2011
+  {% endblock %}
+  
+  {% block description2 %}  
+                Two British comic-book geeks traveling across the U.S. encounter an alien outside Area 51.
+  {% endblock %}
