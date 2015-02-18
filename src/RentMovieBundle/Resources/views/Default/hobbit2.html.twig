@@ -1,0 +1,40 @@
+{% extends 'RentMovieBundle:Default:layout.html.twig'%}
+
+{% block info %}
+	<p><b>Genres:</b></p>
+	<p><b>Starring:</b></p>
+	<p><b>Year:</b></p>
+	<p><b>Description:</b></p><br/><br/>
+	<p><b>Language:</b></p> 
+	<p><b>Price:</b></p> <br/><br/>
+	<p><b>Trailer:</b></p><br/>
+{% endblock %}
+{% block cover %}
+	<img src="{{ asset('bundles/rentmovie/images/hobbit2.jpg') }}"><br/>
+{% endblock %}
+{% block title %}
+	<h4 class="film">The Hobbit: The Desolation of Smaug</h4>
+{% endblock %}
+{% block genres %}
+	<p>Adventure, Fantasy<br/></p>
+{% endblock %}
+{% block starring %}
+	<p>Ian McKellen, Martin Freeman, Richard Armitage <br/></p>
+{% endblock %}
+{% block year %}
+	<p>2013<br/></p>
+{% endblock %}
+{% block description %}
+	<p>The dwarves, along with Bilbo Baggins and Gandalf theGrey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring.<br/></p>
+{% endblock %}
+{% block language %}
+	<p>English<br/></p>
+{% endblock %}
+{% block price %}
+	<p>$5.98</p>
+{% endblock %}
+{% block trailer %}
+	<video width="450" controls>
+		<source src="{{ asset('bundles/rentmovie/video/hobbit2.mp4') }}" type="video/mp4">
+	</video>
+{% endblock %}

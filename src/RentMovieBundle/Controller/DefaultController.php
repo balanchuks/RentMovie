@@ -49,4 +49,40 @@ class DefaultController extends Controller
 		}
 		return $this->render('RentMovieBundle:Default:registration.html.twig');
 	}
+	public function prideAction(){
+		return $this->render('RentMovieBundle:Default:pride.html.twig');
+	}
+	public function gameAction(){
+		return $this->render('RentMovieBundle:Default:game.html.twig');
+	}
+	public function beanAction(){
+		return $this->render('RentMovieBundle:Default:bean.html.twig');
+	}
+	public function wordsAction(){
+		return $this->render('RentMovieBundle:Default:words.html.twig');
+	}
+	public function mindAction(){
+		return $this->render('RentMovieBundle:Default:mind.html.twig');
+	}
+	public function penguinsAction(){
+		return $this->render('RentMovieBundle:Default:penguins.html.twig');
+	}
+	public function dragonAction(){
+		return $this->render('RentMovieBundle:Default:dragon.html.twig');
+	}
+	public function sinisterAction(){
+		return $this->render('RentMovieBundle:Default:sinister.html.twig');
+	}
+	public function conjuringAction(){
+		return $this->render('RentMovieBundle:Default:conjuring.html.twig');
+	}
+	public function hobbitOneAction(){
+		return $this->render('RentMovieBundle:Default:hobbit1.html.twig');
+	}
+	public function hobbitTwoAction(){
+		return $this->render('RentMovieBundle:Default:hobbit2.html.twig');
+	}
+	public function lucyAction(){
+		return $this->render('RentMovieBundle:Default:lucy.html.twig');
+	}
 }

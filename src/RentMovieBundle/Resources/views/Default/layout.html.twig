@@ -10,7 +10,6 @@
 		<style>
 			('.carousel').carousel()
 		</style>
-		
 		<style>
 			h4 {color:orange;
 			font-size:2em;
@@ -102,7 +101,7 @@
 						</div>
 					</div>
 				</div>
-				
+		
 				<div class="span10">
 					<form class="form-horizontal"  enctype="multipart/form-data" align="right" method="POST" action="{{path('rent_movie_main')}}">
 						<input class="input" type="text"  name="login"  placeholder="Login">	
@@ -118,7 +117,7 @@
 					{%endif%}
 
 					<ul class="nav nav-tabs">
-						<li class="active"><a href="#">Home</a></li>
+						<li><a href="{{path('rent_movie_main')}}">Home</a></li>
 						<li><a href="#">Melodrama</a></li>
 						<li><a href="#">Comedy</a></li>
 						<li><a href="#">Drama</a></li>
@@ -127,62 +126,33 @@
 						<li><a href="#">Science fiction</a></li>
 						<li><a href="#">Cartoons</a></li>
 					</ul>
-					
-					<div class="span8">
-						<div class="span4">
-							<h5 align="center"><a href="{{path('rent_movie_pride')}}">Pride and Prejudice</a></h5>
-							<a href="{{path('rent_movie_pride')}}"><img src="{{ asset('bundles/rentmovie/images/pride.jpg') }}"></a><br/><br/><br/>
-							<h5 align="center"><a href="{{path('rent_movie_dragon')}}">How to train your dragon</a></h5>
-							<a href="{{path('rent_movie_dragon')}}"><img src="{{ asset('bundles/rentmovie/images/dragon.jpg') }}"></a><br/><br/><br/>
-							<h5 align="center"><a href="{{path('rent_movie_lucy')}}">Lucy</a></h5>
-							<a href="{{path('rent_movie_lucy')}}"><img src="{{ asset('bundles/rentmovie/images/lucy.jpg') }}"></a><br/><br/><br/>
-							<h5 align="center"><a href="{{path('rent_movie_bean')}}">Mr. Bean</a></h5>
-							<a href="{{path('rent_movie_bean')}}"><img src="{{ asset('bundles/rentmovie/images/bean.jpeg') }}"></a><br/><br/><br/>
-						</div>
-						<div class="span4">
-							<h5 align="center"><a href="{{path('rent_movie_penguins')}}">Penguins of Madagascar</a></h5>
-							<a href="{{path('rent_movie_penguins')}}"><img src="{{ asset('bundles/rentmovie/images/penguins.jpg') }}"></a><br/><br/>
-							<h5 align="center"><a href="{{path('rent_movie_hobbitTwo')}}">The Hobbit: The Desolation of Smaug</a></h5>
-							<a href="{{path('rent_movie_hobbitTwo')}}"><img src="{{ asset('bundles/rentmovie/images/hobbit2.jpg') }}"></a><br/><br/><br/>
-							<h5 align="center"><a href="{{path('rent_movie_conjuring')}}">The Conjuring</a></h5>
-							<a href="{{path('rent_movie_conjuring')}}"><img src="{{ asset('bundles/rentmovie/images/conjuring.jpg') }}"></a><br/><br/><br/>
-							<h5 align="center"><a href="{{path('rent_movie_words')}}">A Thousand Words</a></h5>
-							<a href="{{path('rent_movie_words')}}"><img src="{{ asset('bundles/rentmovie/images/words.jpg') }}"><br/></a><br/><br/>
-						</div>
-						<div class="span4">
-							<h5 align="center"><a href="{{path('rent_movie_sinister')}}">Sinister</a></h5>
-							<a href="{{path('rent_movie_sinister')}}"><img src="{{ asset('bundles/rentmovie/images/sinister.jpg') }}"></a><br/><br/><br/>
-							<h5 align="center"><a href="{{path('rent_movie_game')}}">The Imitation Game</a></h5>
-							<a href="{{path('rent_movie_game')}}"><img src="{{ asset('bundles/rentmovie/images/game.jpg') }}"></a><br/><br/><br/>
-							<h5 align="center"><a href="{{path('rent_movie_mind')}}">A Beautiful Mind</a></h5>
-							<a href="{{path('rent_movie_mind')}}"><img src="{{ asset('bundles/rentmovie/images/mind.jpg') }}"></a><br/><br/>
-							<h5 align="center"><a href="{{path('rent_movie_hobbitOne')}}">The Hobbit: An Unexpected Journey</a></h5>
-							<a href="{{path('rent_movie_hobbitOne')}}"><img src="{{ asset('bundles/rentmovie/images/hobbit1.jpg') }}"></a><br/><br/><br/>
-						</div>
-					</div>
 					<div class="span3">
-						<h4 align="center">Trailers list</h4>
-						<div style="overflow:scroll;  width: 320px; height: 600px;">
-						<h5 align="center"><a href="{{path('rent_movie_bean')}}">Mr. Bean</a></h5>
-						<video width="300" poster="{{ asset('bundles/rentmovie/images/bean.jpeg') }}" controls>
-							<source src="{{ asset('bundles/rentmovie/video/bean.mp4') }}" type="video/mp4">
-						</video>
-						<h5 align="center"><a href="{{path('rent_movie_game')}}">The Imitation Game</a></h5>
-						<video width="300" poster="{{ asset('bundles/rentmovie/images/game.jpg') }}" controls>
-							<source src="{{ asset('bundles/rentmovie/video/game.mp4') }}" type="video/mp4">
-						</video>
-						<h5 align="center"><a href="{{path('rent_movie_hobbitTwo')}}">The Hobbit: The Desolation of Smaug</a></h5>
-						<video width="300" poster="{{ asset('bundles/rentmovie/images/hobbit2.jpg') }}" controls>
-							<source src="{{ asset('bundles/rentmovie/video/hobbit2.mp4') }}" type="video/mp4">
-						</video>
-						<h5 align="center"><a href="{{path('rent_movie_lucy')}}">Lucy</a></h5>
-						<video width="300" poster="{{ asset('bundles/rentmovie/images/lucy.jpg') }}" controls>
-							<source src="{{ asset('bundles/rentmovie/video/lucy.mp4') }}" type="video/mp4">
-						</video>
-						<h5 align="center"><a href="{{path('rent_movie_penguins')}}">The Penguins of Madagascar</a></h5>
-						<video width="300" poster="{{ asset('bundles/rentmovie/images/penguins.jpg') }}" controls>
-							<source src="{{ asset('bundles/rentmovie/video/penguins.mp4') }}" type="video/mp4">
-						</video>
+						{% block cover %}
+						{% endblock %}
+					</div>
+					<div class="span8">
+						{% block title %}
+						{% endblock %}
+						<div class="span2">
+							{% block info %}
+							{% endblock %}
+						</div>
+						<div class="span9">
+							{% block genres %}
+							{% endblock %}
+							{% block starring %}
+							{% endblock %}
+							{% block year %}
+							{% endblock %}
+							{% block description %}
+							{% endblock %}
+							{% block language %}
+							{% endblock %}
+							{% block price %}
+							{% endblock %}
+							<button type="submit" class="btn btn-warning">Borrow!</button><br/><br/>
+							{% block trailer %}
+							{% endblock %}
 						</div>
 					</div>
 				</div>

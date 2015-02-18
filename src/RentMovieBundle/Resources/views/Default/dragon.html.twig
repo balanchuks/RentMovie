@@ -1,0 +1,40 @@
+{% extends 'RentMovieBundle:Default:layout.html.twig'%}
+
+{% block info %}
+	<p><b>Genres:</b></p>
+	<p><b>Starring:</b></p>
+	<p><b>Year:</b></p>
+	<p><b>Description:</b></p><br/><br/> 
+	<p><b>Language:</b></p> 
+	<p><b>Price:</b></p> <br/><br/>
+	<p><b>Trailer:</b></p><br/>
+{% endblock %}
+{% block cover %}
+	<img src="{{ asset('bundles/rentmovie/images/dragon.jpg') }}"><br/>
+{% endblock %}
+{% block title %}
+	<h4 class="film">How to train your dragon</h4>
+{% endblock %}
+{% block genres %}
+	<p>3D computer-animated action-fantasy film<br/></p>
+{% endblock %}
+{% block starring %}
+	<p>Jay Baruchel, Gerard Butler, Christopher Mintz-Plasse<br/></p>
+{% endblock %}
+{% block year %}
+	<p>2010<br/></p>
+{% endblock %}
+{% block description %}
+	<p>A hapless young Viking who aspires to hunt dragons becomes the unlikely friend of a young dragon himself, and learns there may be more to the creatures than he assumed.<br/></p>
+{% endblock %}
+{% block language %}
+	<p>English<br/></p>
+{% endblock %}
+{% block price %}
+	<p>$3.58</p>
+{% endblock %}
+{% block trailer %}
+	<video width="450" controls>
+		<source src="{{ asset('bundles/rentmovie/video/dragon.mp4') }}" type="video/mp4">
+	</video>
+{% endblock %}

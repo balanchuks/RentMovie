@@ -4,3 +4,39 @@ rent_movie_main:
 rent_movie_register:
     path:     /registration
     defaults: { _controller: RentMovieBundle:Default:registration }
+rent_movie_pride:
+    path:     /prideAndPrejudice
+    defaults: { _controller: RentMovieBundle:Default:pride }
+rent_movie_game:
+    path:     /theImitationGame
+    defaults: { _controller: RentMovieBundle:Default:game }
+rent_movie_bean:
+    path:     /mrBean
+    defaults: { _controller: RentMovieBundle:Default:bean }
+rent_movie_mind:
+    path:     /aBeautifulMind
+    defaults: { _controller: RentMovieBundle:Default:mind }
+rent_movie_words:
+    path:     /aThousandWords
+    defaults: { _controller: RentMovieBundle:Default:words }
+rent_movie_penguins:
+    path:     /penguinsOgMadagascar
+    defaults: { _controller: RentMovieBundle:Default:penguins }
+rent_movie_dragon:
+    path:     /howToTrainYourDragon
+    defaults: { _controller: RentMovieBundle:Default:dragon }
+rent_movie_sinister:
+    path:     /sinister
+    defaults: { _controller: RentMovieBundle:Default:sinister }
+rent_movie_conjuring:
+    path:     /theConjuring
+    defaults: { _controller: RentMovieBundle:Default:conjuring }
+rent_movie_hobbitOne:
+    path:     /hobbitAnUnexpectedJourney
+    defaults: { _controller: RentMovieBundle:Default:hobbitOne }
+rent_movie_hobbitTwo:
+    path:     /hobbitTheDesolationOfSmaug
+    defaults: { _controller: RentMovieBundle:Default:hobbitTwo }
+rent_movie_lucy:
+    path:     /lucy
+    defaults: { _controller: RentMovieBundle:Default:lucy }

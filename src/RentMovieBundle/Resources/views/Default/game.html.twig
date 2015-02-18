@@ -1,0 +1,44 @@
+{% extends 'RentMovieBundle:Default:layout.html.twig'%}
+
+{% block info %}
+	<p><b>Genres:</b></p>
+	<p><b>Starring:</b></p><br/>
+	<p><b>Year:</b></p>
+	<p><b>Description:</b></p><br/>
+	<p><b>Language:</b></p> 
+	<p><b>Price:</b></p> <br/><br/>
+	<p><b>Trailer:</b></p><br/>
+{% endblock %}
+{% block cover %}
+	<img src="{{ asset('bundles/rentmovie/images/game.jpg') }}"><br/>
+{% endblock %}
+{% block title %}
+	<h4 class="film">The Imitation Game</h4>
+{% endblock %}
+{% block genres %}
+	<p>Historical thriller<br/></p>
+{% endblock %}
+{% block starring %}
+	<p>Benedict Cumberbatch, Keira Knightley, Matthew Goode, Rory Kinnear, Charles Dance, Mark Strong<br/></p>
+{% endblock %}
+{% block year %}
+	<p>2014<br/></p>
+{% endblock %}
+{% block description %}
+	<p>During World War II, mathematician Alan Turing tries to crack the enigma code with help from fellow mathematicians.<br/></p>
+{% endblock %}
+{% block language %}
+	<p>English<br/></p>
+{% endblock %}
+{% block price %}
+	<p>$5.98</p>
+{% endblock %}
+{% block trailer %}
+	<video width="450" controls>
+		<source src="{{ asset('bundles/rentmovie/video/game.mp4') }}" type="video/mp4">
+	</video>
+{% endblock %}
+ 
+  
+
+
