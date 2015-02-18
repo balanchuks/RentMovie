@@ -1,0 +1,69 @@
+{% extends 'RentMovieBundle::layout.html.twig'%}
+
+{% block links %}
+<li><a href="#">Home</a></li>
+  <li class="active"><a href="{{ path('melodrama')}}">Melodrama</a></li>
+  <li><a href="{{ path('comedy')}}">Comedy</a></li>
+  <li><a href="{{ path('drama')}}">Drama</a></li>
+  <li><a href="{{ path('horror')}}">Horror</a></li>
+  <li><a href="{{ path('fantasy')}}">Fantasy</a></li>
+  <li><a href="{{ path('science')}}">Science fiction</a></li>
+  <li><a href="{{ path('cartoon')}}">Cartoons</a></li>
+ {% endblock %} 
+ 
+ 
+ {% block quote %}
+ "Melodramas of moral courage provide satisfaction through the comforting fantasy that our own character would hold steady under the most extreme pressure of 
+ dreadful events. But we must face the painful awareness that in all likelihood one's own character would not have stood firm."
+ {% endblock %}
+ 
+  {% block author %}
+Jonathan Shay, Achilles in Vietnam: Combat Trauma and the Undoing of Character
+ {% endblock %}
+ 
+ {% block image %}
+  <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/atonement.jpg') }}" alt="">
+  {% endblock %}
+  
+  
+  {% block title %}   
+  Atonement
+  {% endblock %}
+  
+  {% block year %}   
+      2007
+  {% endblock %}
+  
+  {% block description %}  
+                   Fledgling writer Briony Tallis, as a 13-year-old,
+     			   irrevocably changes the course of several lives 
+				   when she accuses her older sister's lover of a
+				   crime he did not commit. Based on the British  
+				   romance novel by Ian McEwan.
+  {% endblock %}
+  
+  
+    {% block title1 %}   
+   Pride and Prejudice
+  {% endblock %}
+  
+  {% block year1 %}   
+      2005
+  {% endblock %}
+  
+  {% block description1 %}  
+                Sparks fly when spirited Elizabeth Bennet
+				meets single, rich, and proud Mr. Darcy.
+				But Mr. Darcy reluctantly finds himself 
+				falling in love with a woman beneath his
+				class. Can each overcome their own pride
+				and prejudice?
+  {% endblock %}
+  
+  {% block image1 %}   
+  <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/pride.jpg') }}" alt="">
+  {% endblock %} 
+                
+  
+  
+  

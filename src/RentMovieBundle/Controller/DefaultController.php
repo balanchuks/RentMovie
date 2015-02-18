@@ -49,6 +49,7 @@ class DefaultController extends Controller
 		}
 		return $this->render('RentMovieBundle:Default:registration.html.twig');
 	}
+<<<<<<< HEAD
 	public function prideAction(){
 		return $this->render('RentMovieBundle:Default:pride.html.twig');
 	}
@@ -85,4 +86,34 @@ class DefaultController extends Controller
 	public function lucyAction(){
 		return $this->render('RentMovieBundle:Default:lucy.html.twig');
 	}
+=======
+	public function melodramaAction()
+    {
+        return $this->render('RentMovieBundle:Default:melodrama.html.twig', array());
+    }
+	 public function comedyAction()
+    {
+        return $this->render('RentMovieBundle:Default:comedy.html.twig', array());
+    }
+	 public function dramaAction()
+    {
+        return $this->render('RentMovieBundle:Default:drama.html.twig', array());
+    }
+	 public function horrorAction()
+    {
+        return $this->render('RentMovieBundle:Default:horror.html.twig', array());
+    }
+	 public function fantasyAction()
+    {
+        return $this->render('RentMovieBundle:Default:fantasy.html.twig', array());
+    }
+	 public function scienceAction()
+    {
+        return $this->render('RentMovieBundle:Default:science.html.twig', array());
+    }
+	public function cartoonAction()
+    {
+        return $this->render('RentMovieBundle:Default:cartoon.html.twig', array());
+    }
+>>>>>>> 7dd633d27bdba3512b82ba79f537fc86573d34cb
 }
