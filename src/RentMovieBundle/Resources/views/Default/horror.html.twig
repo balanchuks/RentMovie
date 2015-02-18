@@ -1,0 +1,56 @@
+{% extends 'RentMovieBundle::layout.html.twig'%}
+
+{% block links %}
+<li><a href="{{path('rent_movie_main')}}">Home</a></li>
+  <li><a href="{{ path('rent_movie_melodrama')}}">Melodrama</a></li>
+  <li><a href="{{ path('rent_movie_comedy')}}">Comedy</a></li>
+  <li><a href="{{ path('rent_movie_drama')}}">Drama</a></li>
+  <li class="active"><a href="{{ path('rent_movie_horror')}}">Horror</a></li>
+  <li><a href="{{ path('rent_movie_fantasy')}}">Fantasy</a></li>
+  <li><a href="{{ path('rent_movie_science')}}">Science fiction</a></li>
+  <li><a href="{{ path('rent_movie_cartoon')}}">Cartoons</a></li>
+ {% endblock %} 
+ 
+ 
+ {% block quote %}
+ "Death in the horror movies is when the monsters get you."
+ {% endblock %}
+ 
+  {% block author %}
+ Stephen King, Danse Macabre
+ {% endblock %}
+ 
+ {% block image %}
+  <a href="{{path('rent_movie_sinister')}}"><img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/sinister.jpg') }}" alt=""></a>
+  {% endblock %}
+  
+  
+  {% block title %}   
+   <a href="{{path('rent_movie_sinister')}}"><font color="#FFAF0A">Sinister</font></a> 
+  {% endblock %}
+  
+  {% block year %}   
+      2012
+  {% endblock %}
+  
+  {% block description %}  
+    A true-crime writer finds a cache of 8mm home movies films that suggest the murder he is currently researching
+	is the work of a serial killer whose career dates back to the 1960s.
+  {% endblock %}
+  
+  
+    {% block title1 %}   
+  <a href="{{path('rent_movie_conjuring')}}"><font color="#FFAF0A">The Conjuring</font></a> 
+  {% endblock %}
+  
+  {% block year1 %}   
+      2013
+  {% endblock %}
+  
+  {% block description1 %}  
+        Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.
+  {% endblock %}
+  
+  {% block image1 %}   
+  <a href="{{path('rent_movie_conjuring')}}"><img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/conjuring.jpg') }}" alt=""></a>
+  {% endblock %} 

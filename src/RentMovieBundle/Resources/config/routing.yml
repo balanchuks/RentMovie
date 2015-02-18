@@ -1,0 +1,78 @@
+rent_movie_melodrama:
+    path:     /melodrama
+    defaults: { _controller: RentMovieBundle:Default:melodrama}
+rent_movie_comedy:
+    path:     /comedy
+    defaults: { _controller: RentMovieBundle:Default:comedy}
+rent_movie_drama:
+    path:     /drama
+    defaults: { _controller: RentMovieBundle:Default:drama}
+rent_movie_horror:
+    path:     /horror
+    defaults: { _controller: RentMovieBundle:Default:horror}
+rent_movie_fantasy:
+    path:     /fantasy
+    defaults: { _controller: RentMovieBundle:Default:fantasy}
+rent_movie_science:
+    path:     /science
+    defaults: { _controller: RentMovieBundle:Default:science}
+rent_movie_cartoon:
+    path:     /cartoon
+    defaults: { _controller: RentMovieBundle:Default:cartoon}
+rent_movie_main:
+    path:     /main
+    defaults: { _controller: RentMovieBundle:Default:main }
+rent_movie_register:
+    path:     /registration
+    defaults: { _controller: RentMovieBundle:Default:registration }
+rent_movie_main:
+    path:     /main
+    defaults: { _controller: RentMovieBundle:Default:main }
+rent_movie_register:
+    path:     /registration
+    defaults: { _controller: RentMovieBundle:Default:registration }
+rent_movie_paul:
+    path:     /paul
+    defaults: { _controller: RentMovieBundle:Default:paul }
+rent_movie_pride:
+    path:     /prideAndPrejudice
+    defaults: { _controller: RentMovieBundle:Default:pride }
+rent_movie_game:
+    path:     /theImitationGame
+    defaults: { _controller: RentMovieBundle:Default:game }
+rent_movie_atonement:
+    path:     /atonement
+    defaults: { _controller: RentMovieBundle:Default:atonement }
+rent_movie_bean:
+    path:     /mrBean
+    defaults: { _controller: RentMovieBundle:Default:bean }
+rent_movie_mind:
+    path:     /aBeautifulMind
+    defaults: { _controller: RentMovieBundle:Default:mind }
+rent_movie_words:
+    path:     /aThousandWords
+    defaults: { _controller: RentMovieBundle:Default:words }
+rent_movie_penguins:
+    path:     /penguinsOgMadagascar
+    defaults: { _controller: RentMovieBundle:Default:penguins }
+rent_movie_dragon:
+    path:     /howToTrainYourDragon
+    defaults: { _controller: RentMovieBundle:Default:dragon }
+rent_movie_sinister:
+    path:     /sinister
+    defaults: { _controller: RentMovieBundle:Default:sinister }
+rent_movie_conjuring:
+    path:     /theConjuring
+    defaults: { _controller: RentMovieBundle:Default:conjuring }
+rent_movie_hobbitOne:
+    path:     /hobbitAnUnexpectedJourney
+    defaults: { _controller: RentMovieBundle:Default:hobbitOne }
+rent_movie_hobbitTwo:
+    path:     /hobbitTheDesolationOfSmaug
+    defaults: { _controller: RentMovieBundle:Default:hobbitTwo }
+rent_movie_lucy:
+    path:     /lucy
+    defaults: { _controller: RentMovieBundle:Default:lucy }
+rent_movie_world:
+    path:     /jurassicWorld
+    defaults: { _controller: RentMovieBundle:Default:world }

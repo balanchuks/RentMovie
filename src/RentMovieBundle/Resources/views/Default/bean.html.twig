@@ -1,0 +1,40 @@
+{% extends 'RentMovieBundle::layout1.html.twig'%}
+
+{% block info %}
+	<p><b>Genres:</b></p>
+	<p><b>Starring:</b></p>
+	<p><b>Year:</b></p>
+	<p><b>Description:</b></p><br/>
+	<p><b>Language:</b></p> 
+	<p><b>Price:</b></p> <br/><br/>
+	<p><b>Trailer:</b></p><br/>
+{% endblock %}
+{% block cover %}
+	<img src="{{ asset('bundles/rentmovie/images/bean.jpeg') }}"><br/>
+{% endblock %}
+{% block title %}
+	<h4 class="film">Mr. Bean</h4>
+{% endblock %}
+{% block genres %}
+	<p>Comedy<br/></p>
+{% endblock %}
+{% block starring %}
+	<p>Rowan Atkinson,  Peter MacNicol, John Mills<br/></p>
+{% endblock %}
+{% block year %}
+	<p>1997<br/></p>
+{% endblock %}
+{% block description %}
+	<p>The bumbling Mr. Bean travels to America when he is given the responsibility of bringing a highly valuable painting to a Los Angeles museum.<br/></p>
+{% endblock %}
+{% block language %}
+	<p>English<br/></p>
+{% endblock %}
+{% block price %}
+	<p>$3.58</p>
+{% endblock %}
+{% block trailer %}
+	<video width="450" controls>
+		<source src="{{ asset('bundles/rentmovie/video/bean.mp4') }}" type="video/mp4">
+	</video>
+{% endblock %}

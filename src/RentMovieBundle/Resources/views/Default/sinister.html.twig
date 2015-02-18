@@ -1,0 +1,41 @@
+{% extends 'RentMovieBundle::layout1.html.twig'%}
+
+{% block info %}
+	<p><b>Genres:</b></p>
+	<p><b>Starring:</b></p>
+	<p><b>Year:</b></p>
+	<p><b>Description:</b></p><br/><br/>
+	<p><b>Language:</b></p> 
+	<p><b>Price:</b></p><br/><br/>
+	<p><b>Trailer:</b></p><br/>
+{% endblock %}
+{% block cover %}
+	<img src="{{ asset('bundles/rentmovie/images/sinister.jpg') }}"><br/>
+{% endblock %}
+{% block title %}
+	<h4 class="film">Sinister</h4>
+{% endblock %}
+{% block genres %}
+	<p>Horror, Mystery, Thriller<br/></p>
+{% endblock %}
+{% block starring %}
+	<p>Ethan Hawke, Juliet Rylance, James Ransone<br/></p>
+{% endblock %}
+{% block year %}
+	<p>2012<br/></p>
+{% endblock %}
+{% block description %}
+	<p>A true-crime writer finds a cache of 8mm home movies films that suggest the murder he is currently researching is the work of a serial killer whose career dates back to the 1960s.
+<br/></p>
+{% endblock %}
+{% block language %}
+	<p>English<br/></p>
+{% endblock %}
+{% block price %}
+	<p>$2.98</p>
+{% endblock %}
+{% block trailer %}
+	<video width="450" controls>
+		<source src="{{ asset('bundles/rentmovie/video/sinister.mp4') }}" type="video/mp4">
+	</video>
+{% endblock %}

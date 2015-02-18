@@ -1,0 +1,50 @@
+{% extends 'RentMovieBundle::layout.html.twig'%}
+
+{% block links %}
+<li><a href="{{path('rent_movie_main')}}">Home</a></li>
+  <li class="active"><a href="{{ path('rent_movie_melodrama')}}">Melodrama</a></li>
+  <li><a href="{{ path('rent_movie_comedy')}}">Comedy</a></li>
+  <li><a href="{{ path('rent_movie_drama')}}">Drama</a></li>
+  <li><a href="{{ path('rent_movie_horror')}}">Horror</a></li>
+  <li><a href="{{ path('rent_movie_fantasy')}}">Fantasy</a></li>
+  <li><a href="{{ path('rent_movie_science')}}">Science fiction</a></li>
+  <li><a href="{{ path('rent_movie_cartoon')}}">Cartoons</a></li>
+ {% endblock %} 
+ 
+ 
+ {% block quote %}
+ "Melodramas of moral courage provide satisfaction through the comforting fantasy that our own character would hold steady under the most extreme pressure of 
+ dreadful events. But we must face the painful awareness that in all likelihood one's own character would not have stood firm."
+ {% endblock %}
+ 
+  {% block author %}
+Jonathan Shay, Achilles in Vietnam: Combat Trauma and the Undoing of Character
+ {% endblock %}
+ 
+  
+  {% block image %}   
+  <a href="{{path('rent_movie_pride')}}"><img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/pride.jpg') }}" alt=""></a>
+  {% endblock %} 
+  
+    {% block title %}   
+   <a href="{{path('rent_movie_pride')}}"><font color="#FFAF0A">Pride and Prejudice</font></a>
+  {% endblock %}
+  
+  {% block year %}   
+      2005
+  {% endblock %}
+  
+  {% block description %}  
+                Sparks fly when spirited Elizabeth Bennet
+				meets single, rich, and proud Mr. Darcy.
+				But Mr. Darcy reluctantly finds himself 
+				falling in love with a woman beneath his
+				class. Can each overcome their own pride
+				and prejudice?
+  {% endblock %}
+  
+  
+                
+  
+  
+  

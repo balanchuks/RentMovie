@@ -1,0 +1,40 @@
+{% extends 'RentMovieBundle::layout1.html.twig'%}
+
+{% block info %}
+	<p><b>Genres:</b></p>
+	<p><b>Starring:</b></p>
+	<p><b>Year:</b></p>
+	<p><b>Description:</b></p><br/><br/>
+	<p><b>Language:</b></p> 
+	<p><b>Price:</b></p> <br/><br/>
+	<p><b>Trailer:</b></p><br/>
+{% endblock %}
+{% block cover %}
+	<img src="{{ asset('bundles/rentmovie/images/words.jpg') }}"><br/>
+{% endblock %}
+{% block title %}
+	<h4 class="film">A Thousand Words</h4>
+{% endblock %}
+{% block genres %}
+	<p>Comedy-drama film<br/></p>
+{% endblock %}
+{% block starring %}
+	<p>Eddie Murphy, Kerry Washington, Cliff Curtis, Clark Duke, Allison Janney<br/></p>
+{% endblock %}
+{% block year %}
+	<p>2012<br/></p>
+{% endblock %}
+{% block description %}
+	<p>After stretching the truth on a deal with a spiritual guru, literary agent Jack McCall finds a Bodhi tree on his property. Its appearance holds a valuable lesson on the consequences of every word we speak.<br/></p>
+{% endblock %}
+{% block language %}
+	<p>English<br/></p>
+{% endblock %}
+{% block price %}
+	<p>$2.98</p>
+{% endblock %}
+{% block trailer %}
+	<video width="450" controls>
+		<source src="{{ asset('bundles/rentmovie/video/words.mp4') }}" type="video/mp4">
+	</video>
+{% endblock %}

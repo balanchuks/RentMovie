@@ -1,0 +1,215 @@
+ <!DOCTYPE html>
+<HTML>
+	<head>
+		<title>Film Rental</title>
+		<meta charset="UTF-8">
+		<link href="{{ asset('bundles/rentmovie/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+		<link href="{{ asset('bundles/rentmovie/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<link href="{{ asset('bundles/rentmovie/js/bootstrap.js') }}" rel="stylesheet" type="text/css">
+		<link href="{{ asset('bundles/rentmovie/js/bootstrap.min.js') }}" rel="stylesheet" type="text/css">
+  
+  <style>
+  ('.carousel').carousel()
+  </style>
+  
+  <style>
+  
+            h4 {
+	        color:orange;
+			font-size:2em;
+			font-variant: small-caps;
+			font-weight: bold;
+			}
+			
+			h5 {
+			font-size: 125%;
+			font-weight: bold;
+			font-family:Helvetica;
+			text-align:justify;
+			color:black;
+			}
+			body{margin: 25px 5px;}
+			p {
+			font-size: 150%;
+			font-family:verdana;
+			text-align:center;
+			color:black;
+			font-weight: bold;}
+		
+		    h2 {
+			font-family:verdana;
+			text-align:center;
+			color:orange;
+			font-weight: bold;
+			}
+			h3 {
+			background-color: rgba(203, 233, 247, 0.5);
+			}
+			.overlay { 
+			color:#fff;
+			position:absolute;
+			z-index:12;
+			top:50%;
+			left:0;
+			width:100%;
+			text-align:center;
+			}
+			
+			a.white {color:#fff;}
+			
+		</style>
+		
+		
+	</head>
+	<body>
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+		<div class="span2">
+					<h4 align="center">Most borrowed</h4>
+					<div class="container"><br>
+						<div id="myCarouselBorrowed" class="carousel slide" data-ride="carousel" style="width:200px">
+						
+						<ol class="carousel-indicators">
+							<li data-target="#myCarouselBorrowed" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarouselBorrowed" data-slide-to="1"></li>
+							<li data-target="#myCarouselBorrowed" data-slide-to="2"></li>
+						</ol>
+
+						<div class="carousel-inner" role="listbox">
+                      
+						<div class="item active">
+							<div class="overlay"><a class="white" href="{{path('rent_movie_lucy')}}"><h3>Lucy</h3></a></div>
+							<a href="{{path('rent_movie_lucy')}}"><img src="{{ asset('bundles/rentmovie/images/lucy.jpg') }}"></a>
+						</div>
+						<div class="item">
+							<div class="overlay"><a class="white" href="{{path('rent_movie_penguins')}}"><h3>Penguins of Madagascar</h3></a></div>
+							<a href="{{path('rent_movie_penguins')}}"><img src="{{ asset('bundles/rentmovie/images/penguins.jpg') }}"></a>
+						</div>
+						<div class="item">
+							<div class="overlay"><a class="white" href="{{path('rent_movie_game')}}"><h3>The Imitation Game</h3></a></div>
+							<a href="{{path('rent_movie_game')}}"><img src="{{ asset('bundles/rentmovie/images/game.jpg') }}"></a>
+						</div>
+  
+						</div>
+    
+						<a class="carousel-control left" href="#myCarouselBorrowed" data-slide="prev">&lsaquo;</a>
+						<a class="carousel-control right" href="#myCarouselBorrowed" data-slide="next">&rsaquo;</a>
+						</div>
+					</div>
+						
+					<h4 align="center">Most reviewed</h4>
+					<div class="container"><br>
+						<div id="myCarouselReviewed" class="carousel slide" data-ride="carousel" style="width:200px">
+						
+						<ol class="carousel-indicators">
+							<li data-target="#myCarouselReviewed" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarouselReviewed" data-slide-to="1"></li>
+							<li data-target="#myCarouselReviewed" data-slide-to="2"></li>
+						</ol>
+
+						<div class="carousel-inner" role="listbox">
+
+						<div class="item active">
+							<div class="overlay"><a class="white" href="{{path('rent_movie_hobbitOne')}}"><h3>The Hobbit: An Unexpected Journey</h3></a></div>
+							<a href="{{path('rent_movie_hobbitOne')}}"><img src="{{ asset('bundles/rentmovie/images/hobbit1.jpg') }}"></a>
+						</div>
+						<div class="item">
+							<div class="overlay"><a class="white" href="{{path('rent_movie_bean')}}"><h3>Mr. Bean</h3></a></div>
+							<a href="{{path('rent_movie_bean')}}"><img src="{{ asset('bundles/rentmovie/images/bean.jpeg') }}" ></a>
+						</div>
+						<div class="item">
+							<div class="overlay"><a class="white" href="{{path('rent_movie_dragon')}}"><h3>How to Train your Dragon</h3></a></div>
+							<a href="{{path('rent_movie_dragon')}}"><img src="{{ asset('bundles/rentmovie/images/dragon.jpg') }}"></a>
+						</div>
+  
+						</div>
+    
+						<a class="carousel-control left" href="#myCarouselReviewed" data-slide="prev">&lsaquo;</a>
+						<a class="carousel-control right" href="#myCarouselReviewed" data-slide="next">&rsaquo;</a>
+						</div>
+					</div>
+				</div>
+
+	
+    <div class="span10">
+	<!--action="newAdd.php"-->
+<form class="form-horizontal"  enctype="multipart/form-data" align="right" method="POST" action="/~s175515/app_dev.php/main">
+			<input class="input" type="text"  name="login" id="login" placeholder="Login">	
+			<input class="input" type="password" name="password" id="password"  placeholder="Password">
+			<button type="submit" class="btn btn-primary">Login</button>
+			<a href="/~s175515/app_dev.php/registration">Register</a>
+		</form>
+		
+	<!--	{%if name is defined%}
+			<div class="alert">
+				<strong>hello {{name}}</strong>
+			</div>
+		{%endif%} -->
+
+<ul class="nav nav-tabs" id="links">
+  {% block links %}   {% endblock %} 
+</ul>
+
+
+         <div class="row">
+            <div class="span12" id="quote">
+                <div class="well text-center" id="author">
+				<blockquote><p style="font-family:fantasy;color:#8C001A">{% block quote %}   {% endblock %} </p><p><small style="font-family:fantasy;color:black;text-align:right"> {% block author %}   {% endblock %} </small></p></blockquote>
+				</div>
+            </div>
+        </div>
+        
+
+ <!-- Page Content -->
+ <div class="row">
+    <div class="span12">
+    <div class="container">
+        <div class="row">
+            <div class="span3" id="image">
+              {% block image %}   {% endblock %} 
+            </div>
+            <div class="span8">
+                <h2  id="title">{% block title %}   {% endblock %} </h2>
+				<p style="	text-align:center" id="year">{% block year %}   {% endblock %}</p>
+                <h5  id="description">{% block description %}   {% endblock %}</h5>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+        <hr>
+			
+     <!-- Page Content -->
+ <div class="row">
+    <div class="span12">
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+			    <h2 id="title1">{% block title1 %}   {% endblock %} </h2>
+				<p style="text-align:center" id="year1">{% block year1 %}   {% endblock %}</p>
+                <h5 id="description1">{% block description1 %}   {% endblock %}</h5>
+            </div>
+            <div class="span3" id="image1">
+			 {% block image1 %}   {% endblock %} 
+            </div>
+        </div>
+</div>
+</div>
+  </div>
+
+
+ <footer>
+            <div class="row" align="center">  
+            <div class="span10">
+                    <h6  style="color:black;text-align:center">Copyright &copy; Vertsimakha&amp;Balanchuk 2015</h6>
+					</div>
+            </div>
+        </footer>
+</div>
+</div>
+</div>
+	</body>
+</HTML>

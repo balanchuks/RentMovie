@@ -1,0 +1,58 @@
+{% extends 'RentMovieBundle::layout.html.twig'%}
+
+{% block links %}
+<li><a href="{{path('rent_movie_main')}}">Home</a></li>
+  <li><a href="{{ path('rent_movie_melodrama')}}">Melodrama</a></li>
+  <li><a href="{{ path('rent_movie_comedy')}}">Comedy</a></li>
+  <li><a href="{{ path('rent_movie_drama')}}">Drama</a></li>
+  <li><a href="{{ path('rent_movie_horror')}}">Horror</a></li>
+  <li class="active"><a href="{{ path('rent_movie_fantasy')}}">Fantasy</a></li>
+  <li><a href="{{ path('rent_movie_science')}}">Science fiction</a></li>
+  <li><a href="{{ path('rent_movie_cartoon')}}">Cartoons</a></li>
+ {% endblock %} 
+ 
+ 
+ {% block quote %}
+ "Fantasy is a necessary ingredient in living, it's a way of looking at life through the wrong end of a telescope, 
+ and that enables you to laugh at life's realities."
+ {% endblock %}
+ 
+  {% block author %}
+   Dr. Seuss
+ {% endblock %}
+ 
+ {% block image %}
+  <a href="{{path('rent_movie_hobbitOne')}}"><img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/hobbit1.jpg') }}" alt=""></a>
+  {% endblock %}
+  
+  
+  {% block title %}   
+ <a href="{{path('rent_movie_hobbitOne')}}"><font color="#FFAF0A">The Hobbit: An Unexpected Journey</font></a>
+  {% endblock %}
+  
+  {% block year %}   
+      2012
+  {% endblock %}
+  
+  {% block description %}  
+    A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain
+	with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug.
+  {% endblock %}
+  
+  
+    {% block title1 %}   
+  <a href="{{path('rent_movie_hobbitTwo')}}"><font color="#FFAF0A">The Hobbit: The Desolation of Smaug</font></a> 
+  {% endblock %}
+  
+  {% block year1 %}   
+      2013
+  {% endblock %}
+  
+  {% block description1 %}  
+        The dwarves, along with Bilbo Baggins and Gandalf theGrey, continue their quest to reclaim Erebor, 
+		their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring.
+  {% endblock %}
+  
+  {% block image1 %}   
+  <a href="{{path('rent_movie_hobbitTwo')}}"><img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/hobbit2.jpg') }}" alt=""></a>
+  {% endblock %} 

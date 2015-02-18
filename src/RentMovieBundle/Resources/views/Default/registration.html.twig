@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<HTML>
+	<head>
+		<title>Film Rental</title>
+		<meta charset="UTF-8">
+		<link href="{{ asset('bundles/rentmovie/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+		<style>
+		body {
+			margin-left: auto;
+			margin-right: auto;
+			width: 20%;
+			background-color: #FFFF99;
+		}
+		h2 {color: #006699}
+		label {
+			font-weight: bold;
+		}
+		</style>
+	</head>
+	<body left="25px">
+		<form class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('rent_movie_register')}}">
+			<h2>Registration form:</h2>
+			<label for="login">Login</label>
+			<input class="input" type="text"  name="login" id="login">
+			<label for="password">Password</label>
+			<input class="input" type="password" name="password" id="password">
+			<label for="name">Name</label>
+			<input class="input" type="text"  name="name" id="name">
+			<label for="surname">Surname</label>
+			<input class="input" type="text"  name="surname" id="surname">
+			<label for="email">E-mail</label>
+			<input class="input" type="text"  name="email" id="email">
+			<label for="pesel">Pesel</label>
+			<input class="input" type="text"  name="pesel" id="pesel" maxlength="11">
+			</br></br>
+			<button type="submit" class="btn btn-primary">Create account</button>
+		</form>
+		{%if name is defined%}
+			<div class="alert">
+				<strong>hello {{name}}</strong>
+			</div>
+		{%endif%}
+	</body>
+</HTML>
