@@ -16,11 +16,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-<<<<<<< HEAD
-            new RentMovieBundle\RentMovieBundle(),
-=======
             new RentMovieBundle\RentMovieBundle()
->>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

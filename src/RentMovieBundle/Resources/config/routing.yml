@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-rent_movie_melodrama:
-    path:     /melodrama
-    defaults: { _controller: RentMovieBundle:Default:melodrama}
-rent_movie_comedy:
-    path:     /comedy
-    defaults: { _controller: RentMovieBundle:Default:comedy}
-rent_movie_drama:
-    path:     /drama
-    defaults: { _controller: RentMovieBundle:Default:drama}
-rent_movie_horror:
-    path:     /horror
-    defaults: { _controller: RentMovieBundle:Default:horror}
-rent_movie_fantasy:
-    path:     /fantasy
-    defaults: { _controller: RentMovieBundle:Default:fantasy}
-rent_movie_science:
-    path:     /science
-    defaults: { _controller: RentMovieBundle:Default:science}
-rent_movie_cartoon:
-    path:     /cartoon
-    defaults: { _controller: RentMovieBundle:Default:cartoon}
-rent_movie_main:
-    path:     /main
-    defaults: { _controller: RentMovieBundle:Default:main }
-rent_movie_register:
-    path:     /registration
-    defaults: { _controller: RentMovieBundle:Default:registration }
-=======
->>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
 rent_movie_main:
     path:     /main
     defaults: { _controller: RentMovieBundle:Default:main }
@@ -35,24 +5,12 @@ rent_movie_register:
     path:     /registration
     defaults: { _controller: RentMovieBundle:Default:registration }
 <<<<<<< HEAD
-rent_movie_paul:
-    path:     /paul
-    defaults: { _controller: RentMovieBundle:Default:paul }
-=======
-<<<<<<< HEAD
->>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
 rent_movie_pride:
     path:     /prideAndPrejudice
     defaults: { _controller: RentMovieBundle:Default:pride }
 rent_movie_game:
     path:     /theImitationGame
     defaults: { _controller: RentMovieBundle:Default:game }
-<<<<<<< HEAD
-rent_movie_atonement:
-    path:     /atonement
-    defaults: { _controller: RentMovieBundle:Default:atonement }
-=======
->>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
 rent_movie_bean:
     path:     /mrBean
     defaults: { _controller: RentMovieBundle:Default:bean }
@@ -83,11 +41,6 @@ rent_movie_hobbitTwo:
 rent_movie_lucy:
     path:     /lucy
     defaults: { _controller: RentMovieBundle:Default:lucy }
-<<<<<<< HEAD
-rent_movie_world:
-    path:     /jurassicWorld
-    defaults: { _controller: RentMovieBundle:Default:world }
-=======
 =======
 melodrama:
     path:     /melodrama
@@ -111,4 +64,3 @@ cartoon:
     path:     /cartoon
     defaults: { _controller: RentMovieBundle:Default:cartoon}
 >>>>>>> 7dd633d27bdba3512b82ba79f537fc86573d34cb
->>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc

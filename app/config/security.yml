@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-security:
-    providers:
-        in_memory:
-            memory: ~
-
-    firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-        default:
-            anonymous: ~
-=======
 # you can read more about security in the related section of the documentation
 # http://symfony.com/doc/current/book/security.html
 security:
@@ -64,4 +50,3 @@ security:
     # http://symfony.com/doc/current/book/security.html#security-book-access-control-matching-options
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
->>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
