@@ -50,12 +50,56 @@ class DefaultController extends Controller
 		return $this->render('RentMovieBundle:Default:registration.html.twig');
 	}
 <<<<<<< HEAD
+	 public function mainpageAction()
+    {
+        return $this->render('RentMovieBundle:Default:mainpage.html.twig', array());
+    }
+	 public function melodramaAction()
+    {
+        return $this->render('RentMovieBundle:Default:melodrama.html.twig', array());
+    }
+	 public function comedyAction()
+    {
+        return $this->render('RentMovieBundle:Default:comedy.html.twig', array());
+    }
+	 public function dramaAction()
+    {
+        return $this->render('RentMovieBundle:Default:drama.html.twig', array());
+    }
+	 public function horrorAction()
+    {
+        return $this->render('RentMovieBundle:Default:horror.html.twig', array());
+    }
+	 public function fantasyAction()
+    {
+        return $this->render('RentMovieBundle:Default:fantasy.html.twig', array());
+    }
+	 public function scienceAction()
+    {
+        return $this->render('RentMovieBundle:Default:science.html.twig', array());
+    }
+	public function cartoonAction()
+    {
+        return $this->render('RentMovieBundle:Default:cartoon.html.twig', array());
+    }
+	public function paulAction(){
+		return $this->render('RentMovieBundle:Default:paul.html.twig');
+	}
+=======
+<<<<<<< HEAD
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
 	public function prideAction(){
 		return $this->render('RentMovieBundle:Default:pride.html.twig');
 	}
 	public function gameAction(){
 		return $this->render('RentMovieBundle:Default:game.html.twig');
 	}
+<<<<<<< HEAD
+	public function atonementAction(){
+		return $this->render('RentMovieBundle:Default:atonement.html.twig');
+	}
+=======
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
 	public function beanAction(){
 		return $this->render('RentMovieBundle:Default:bean.html.twig');
 	}
@@ -86,6 +130,11 @@ class DefaultController extends Controller
 	public function lucyAction(){
 		return $this->render('RentMovieBundle:Default:lucy.html.twig');
 	}
+<<<<<<< HEAD
+	public function worldAction(){
+		return $this->render('RentMovieBundle:Default:world.html.twig');
+	}
+=======
 =======
 	public function melodramaAction()
     {
@@ -116,4 +165,5 @@ class DefaultController extends Controller
         return $this->render('RentMovieBundle:Default:cartoon.html.twig', array());
     }
 >>>>>>> 7dd633d27bdba3512b82ba79f537fc86573d34cb
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
 }

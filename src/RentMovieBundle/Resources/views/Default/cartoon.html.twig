@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+{% extends 'RentMovieBundle::layout.html.twig' %}
+
+{% block links %}
+<li><a href="{{path('rent_movie_main')}}">Home</a></li>
+  <li><a href="{{ path('rent_movie_melodrama')}}">Melodrama</a></li>
+  <li><a href="{{ path('rent_movie_comedy')}}">Comedy</a></li>
+  <li><a href="{{ path('rent_movie_drama')}}">Drama</a></li>
+  <li><a href="{{ path('rent_movie_horror')}}">Horror</a></li>
+  <li><a href="{{ path('rent_movie_fantasy')}}">Fantasy</a></li>
+  <li><a href="{{ path('rent_movie_science')}}">Science fiction</a></li>
+  <li class="active"><a href="{{ path('rent_movie_cartoon')}}">Cartoons</a></li>
+=======
 {% extends 'RentMovieBundle::layout.html.twig'%}
 
 {% block links %}
@@ -9,6 +22,7 @@
   <li><a href="{{ path('fantasy')}}">Fantasy</a></li>
   <li><a href="{{ path('science')}}">Science fiction</a></li>
   <li class="active"><a href="{{ path('cartoon')}}">Cartoons</a></li>
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
  {% endblock %} 
  
  
@@ -21,12 +35,20 @@
  {% endblock %}
  
  {% block image %}
+<<<<<<< HEAD
+  <a href="{{path('rent_movie_penguins')}}"><img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/penguins.jpg') }}" alt=""></a>
+=======
   <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/penguins.jpg') }}" alt="">
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
   {% endblock %}
   
   
   {% block title %}   
+<<<<<<< HEAD
+   <a href="{{path('rent_movie_penguins')}}"><font color="#FFAF0A">Penguins of Madagascar</font></a>
+=======
    Penguins of Madagascar 
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
   {% endblock %}
   
   {% block year %}   
@@ -40,7 +62,11 @@
   
   
     {% block title1 %}   
+<<<<<<< HEAD
+   <a href="{{path('rent_movie_dragon')}}"><font color="#FFAF0A">How to train your dragon</font></a>
+=======
    How to train your dragon
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
   {% endblock %}
   
   {% block year1 %}   
@@ -52,5 +78,9 @@
   {% endblock %}
   
   {% block image1 %}   
+<<<<<<< HEAD
+  <a href="{{path('rent_movie_dragon')}}"><img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/dragon.jpg') }}" alt=""></a>
+=======
   <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/dragon.jpg') }}" alt="">
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
   {% endblock %} 

@@ -1,6 +1,16 @@
 {% extends 'RentMovieBundle::layout.html.twig'%}
 
 {% block links %}
+<<<<<<< HEAD
+<li><a href="{{path('rent_movie_main')}}">Home</a></li>
+  <li class="active"><a href="{{ path('rent_movie_melodrama')}}">Melodrama</a></li>
+  <li><a href="{{ path('rent_movie_comedy')}}">Comedy</a></li>
+  <li><a href="{{ path('rent_movie_drama')}}">Drama</a></li>
+  <li><a href="{{ path('rent_movie_horror')}}">Horror</a></li>
+  <li><a href="{{ path('rent_movie_fantasy')}}">Fantasy</a></li>
+  <li><a href="{{ path('rent_movie_science')}}">Science fiction</a></li>
+  <li><a href="{{ path('rent_movie_cartoon')}}">Cartoons</a></li>
+=======
 <li><a href="#">Home</a></li>
   <li class="active"><a href="{{ path('melodrama')}}">Melodrama</a></li>
   <li><a href="{{ path('comedy')}}">Comedy</a></li>
@@ -9,6 +19,7 @@
   <li><a href="{{ path('fantasy')}}">Fantasy</a></li>
   <li><a href="{{ path('science')}}">Science fiction</a></li>
   <li><a href="{{ path('cartoon')}}">Cartoons</a></li>
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
  {% endblock %} 
  
  
@@ -21,6 +32,22 @@
 Jonathan Shay, Achilles in Vietnam: Combat Trauma and the Undoing of Character
  {% endblock %}
  
+<<<<<<< HEAD
+  
+  {% block image %}   
+  <a href="{{path('rent_movie_pride')}}"><img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/pride.jpg') }}" alt=""></a>
+  {% endblock %} 
+  
+    {% block title %}   
+   <a href="{{path('rent_movie_pride')}}"><font color="#FFAF0A">Pride and Prejudice</font></a>
+  {% endblock %}
+  
+  {% block year %}   
+      2005
+  {% endblock %}
+  
+  {% block description %}  
+=======
  {% block image %}
   <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/atonement.jpg') }}" alt="">
   {% endblock %}
@@ -52,6 +79,7 @@ Jonathan Shay, Achilles in Vietnam: Combat Trauma and the Undoing of Character
   {% endblock %}
   
   {% block description1 %}  
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
                 Sparks fly when spirited Elizabeth Bennet
 				meets single, rich, and proud Mr. Darcy.
 				But Mr. Darcy reluctantly finds himself 
@@ -60,9 +88,13 @@ Jonathan Shay, Achilles in Vietnam: Combat Trauma and the Undoing of Character
 				and prejudice?
   {% endblock %}
   
+<<<<<<< HEAD
+  
+=======
   {% block image1 %}   
   <img class="img-responsive img-rounded" src="{{ asset('bundles/rentmovie/images/pride.jpg') }}" alt="">
   {% endblock %} 
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
                 
   
   
