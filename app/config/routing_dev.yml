@@ -15,4 +15,8 @@ _errors:
     prefix:   /_error
 
 _main:
+<<<<<<< HEAD
     resource: routing.yml
+=======
+    resource: routing.yml
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc

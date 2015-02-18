@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 if (!isset($_SERVER['HTTP_HOST'])) {
+=======
+/*if (!isset($_SERVER['HTTP_HOST'])) {
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
     exit('This script cannot be run from the CLI. Run it from a browser.');
 }
 
@@ -10,7 +14,11 @@ if (!in_array(@$_SERVER['REMOTE_ADDR'], array(
 ))) {
     header('HTTP/1.0 403 Forbidden');
     exit('This script is only accessible from localhost.');
+<<<<<<< HEAD
 }
+=======
+}*/
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
 
 require_once dirname(__FILE__).'/../app/SymfonyRequirements.php';
 

@@ -1,4 +1,8 @@
 rent_movie:
     resource: "@RentMovieBundle/Resources/config/routing.yml"
+<<<<<<< HEAD
     prefix:   /
 
+=======
+    prefix:   /
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc

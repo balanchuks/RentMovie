@@ -15,8 +15,13 @@ umask(0000);
 ) {
     header('HTTP/1.0 403 Forbidden');
     exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
+<<<<<<< HEAD
 }
 */
+=======
+}*/
+
+>>>>>>> 712257b3fe4b5c6231415b7dff637f0c2b9915dc
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 Debug::enable();
 
