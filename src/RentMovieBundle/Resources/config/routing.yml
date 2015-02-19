@@ -43,25 +43,25 @@ rent_movie_hobbitTwo:
 rent_movie_lucy:
     path:     /lucy
     defaults: { _controller: RentMovieBundle:Default:lucy }
-melodrama:
+rent_movie_melodrama:
     path:     /melodrama
     defaults: { _controller: RentMovieBundle:Default:melodrama}
-comedy:
+rent_movie_comedy:
     path:     /comedy
     defaults: { _controller: RentMovieBundle:Default:comedy}
-drama:
+rent_movie_drama:
     path:     /drama
     defaults: { _controller: RentMovieBundle:Default:drama}
-horror:
+rent_movie_horror:
     path:     /horror
     defaults: { _controller: RentMovieBundle:Default:horror}
-fantasy:
+rent_movie_fantasy:
     path:     /fantasy
     defaults: { _controller: RentMovieBundle:Default:fantasy}
-science:
+rent_movie_science:
     path:     /science
     defaults: { _controller: RentMovieBundle:Default:science}
-cartoon:
+rent_movie_cartoon:
     path:     /cartoon
     defaults: { _controller: RentMovieBundle:Default:cartoon}
 rent_movie_form:

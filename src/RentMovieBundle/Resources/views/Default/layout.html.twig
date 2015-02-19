@@ -4,8 +4,11 @@
 		<title>Film Rental</title>
 		<meta charset="UTF-8">
 		<link href="{{ asset('bundles/rentmovie/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+		<link href="{{ asset('bundles/rentmovie/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<link href="{{ asset('bundles/rentmovie/js/bootstrap.js') }}" rel="stylesheet" type="text/css">
+		<link href="{{ asset('bundles/rentmovie/js/bootstrap.min.js') }}" rel="stylesheet" type="text/css">
   
 		<style>
 			('.carousel').carousel()
@@ -28,7 +31,7 @@
 			}
 			a.white {color:#fff;}
 			h3 {
-			background-color: rgba(203, 233, 247, 0.5);;
+			background-color: rgba(203, 233, 247, 0.5);
 			}
 		</style>
 		
@@ -54,8 +57,8 @@
 							<a href="{{path('rent_movie_lucy')}}"><img src="{{ asset('bundles/rentmovie/images/lucy.jpg') }}"></a>
 						</div>
 						<div class="item">
-							<div class="overlay"><a class="white" href="{{path('rent_movie_conjuring')}}"><h3>Сonjuring</h3></a></div>
-							<a href="{{path('rent_movie_conjuring')}}"><img src="{{ asset('bundles/rentmovie/images/conjuring.jpg') }}" ></a>
+							<div class="overlay"><a class="white" href="{{path('rent_movie_penguins')}}"><h3>Penguins of Madagascar</h3></a></div>
+							<a href="{{path('rent_movie_penguins')}}"><img src="{{ asset('bundles/rentmovie/images/penguins.jpg') }}"></a>
 						</div>
 						<div class="item">
 							<div class="overlay"><a class="white" href="{{path('rent_movie_game')}}"><h3>The Imitation Game</h3></a></div>
@@ -101,7 +104,7 @@
 						</div>
 					</div>
 				</div>
-			{%if name is not defined%}
+		
 				<div class="span10">
 					<form class="form-horizontal"  enctype="multipart/form-data" align="right" method="POST" action="{{path('rent_movie_main')}}">
 						<input class="input" type="text"  name="login"  placeholder="Login">	
@@ -109,7 +112,7 @@
 						<button type="submit" class="btn btn-primary">Login</button>
 						<a href="{{path('rent_movie_register')}}">Register</a>
 					</form>
-					{%endif%}
+					
 					{%if name is defined%}
 						<div class="alert">
 							<strong>hello {{name}}</strong>
@@ -117,14 +120,14 @@
 					{%endif%}
 
 					<ul class="nav nav-tabs">
-						<li><a href="{{path('rent_movie_main')}}">Home</a></li>
-						<li><a href="#">Melodrama</a></li>
-						<li><a href="#">Comedy</a></li>
-						<li><a href="#">Drama</a></li>
-						<li><a href="#">Horror</a></li>
-						<li><a href="#">Fantasy</a></li>
-						<li><a href="#">Science fiction</a></li>
-						<li><a href="#">Cartoons</a></li>
+	  <li class="active"><a href="{{path('rent_movie_main')}}">Home</a></li>
+      <li><a href="{{path('rent_movie_melodrama')}}">Melodrama</a></li>
+      <li><a href="{{path('rent_movie_comedy')}}">Comedy</a></li>
+      <li><a href="{{path('rent_movie_drama')}}">Drama</a></li>
+      <li><a href="{{path('rent_movie_horror')}}">Horror</a></li>
+      <li><a href="{{path('rent_movie_fantasy')}}">Fantasy</a></li>
+      <li><a href="{{path('rent_movie_science')}}">Science fiction</a></li>
+      <li><a href="{{path('rent_movie_cartoon')}}">Cartoons</a></li>
 					</ul>
 					<div class="span3">
 						{% block cover %}
@@ -150,7 +153,7 @@
 							{% endblock %}
 							{% block price %}
 							{% endblock %}
-							<a href="{{path('rent_movie_form')}}"><button type="submit" class="btn btn-warning">Borrow!</button><br/><br/></a>
+						<a href="{{path('rent_movie_form')}}"><button type="submit" class="btn btn-warning">Borrow!</button><br/><br/></a>
 							{% block trailer %}
 							{% endblock %}
 						</div>
