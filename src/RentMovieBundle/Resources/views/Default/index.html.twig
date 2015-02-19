@@ -96,7 +96,6 @@
 						</div>
   
 						</div>
-    
 						<a class="carousel-control left" href="#myCarouselReviewed" data-slide="prev">&lsaquo;</a>
 						<a class="carousel-control right" href="#myCarouselReviewed" data-slide="next">&rsaquo;</a>
 						</div>
@@ -104,28 +103,31 @@
 				</div>
 				
 				<div class="span10">
+				
+				{% if name is not defined %}
 					<form class="form-horizontal"  enctype="multipart/form-data" align="right" method="POST" action="{{path('rent_movie_main')}}">
 						<input class="input" type="text"  name="login"  placeholder="Login">	
 						<input class="input" type="password" name="password"  placeholder="Password">
 						<button type="submit" class="btn btn-primary">Login</button>
 						<a href="{{path('rent_movie_register')}}">Register</a>
 					</form>
-					
-					{%if name is defined%}
+				{% endif %}
+					{% if name is defined %}
 						<div class="alert">
 							<strong>hello {{name}}</strong>
+							<a href="{{path('rent_movie_logout')}}">Logout</a>
 						</div>
-					{%endif%}
+					{% endif %}
 
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Melodrama</a></li>
-						<li><a href="#">Comedy</a></li>
-						<li><a href="#">Drama</a></li>
-						<li><a href="#">Horror</a></li>
-						<li><a href="#">Fantasy</a></li>
-						<li><a href="#">Science fiction</a></li>
-						<li><a href="#">Cartoons</a></li>
+						<li><a href="{{path('melodrama')}}">Melodrama</a></li>
+						<li><a href="{{path('comedy')}}">Comedy</a></li>
+						<li><a href="{{path('drama')}}">Drama</a></li>
+						<li><a href="{{path('horror')}}">Horror</a></li>
+						<li><a href="{{path('fantasy')}}">Fantasy</a></li>
+						<li><a href="{{path('science')}}">Science fiction</a></li>
+						<li><a href="{{path('cartoon')}}">Cartoons</a></li>
 					</ul>
 					
 					<div class="span8">

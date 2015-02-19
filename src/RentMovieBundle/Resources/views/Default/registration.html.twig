@@ -16,6 +16,14 @@
 			font-weight: bold;
 		}
 		</style>
+		<script language="javascript">
+		function femail(x)
+		{
+			pattern=/^[^@.]+@[^@]+[.][^@]+$/
+			if (!x.value.match(pattern))
+				alert("Inappropriate e-mail address")
+		}
+		</script>
 	</head>
 	<body left="25px">
 		<form class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('rent_movie_register')}}">
@@ -29,16 +37,11 @@
 			<label for="surname">Surname</label>
 			<input class="input" type="text"  name="surname" id="surname">
 			<label for="email">E-mail</label>
-			<input class="input" type="text"  name="email" id="email">
+			<input class="input" type="text"  name="email" id="email" onBlur="femail(email)">
 			<label for="pesel">Pesel</label>
 			<input class="input" type="text"  name="pesel" id="pesel" maxlength="11">
 			</br></br>
 			<button type="submit" class="btn btn-primary">Create account</button>
 		</form>
-		{%if name is defined%}
-			<div class="alert">
-				<strong>hello {{name}}</strong>
-			</div>
-		{%endif%}
 	</body>
 </HTML>

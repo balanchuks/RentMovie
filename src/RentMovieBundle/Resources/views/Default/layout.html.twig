@@ -101,7 +101,7 @@
 						</div>
 					</div>
 				</div>
-		
+			{%if name is not defined%}
 				<div class="span10">
 					<form class="form-horizontal"  enctype="multipart/form-data" align="right" method="POST" action="{{path('rent_movie_main')}}">
 						<input class="input" type="text"  name="login"  placeholder="Login">	
@@ -109,7 +109,7 @@
 						<button type="submit" class="btn btn-primary">Login</button>
 						<a href="{{path('rent_movie_register')}}">Register</a>
 					</form>
-					
+					{%endif%}
 					{%if name is defined%}
 						<div class="alert">
 							<strong>hello {{name}}</strong>

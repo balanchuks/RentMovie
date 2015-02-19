@@ -5,25 +5,45 @@ namespace RentMovieBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use RentMovieBundle\Entity\LogIn;
+use RentMovieBundle\Models\Logout;
 
 class DefaultController extends Controller
 {
     public function mainAction(Request $request)
     {
+		$session=$this->getRequest()->getSession();
+		$em = $this->getDoctrine()->getEntityManager();
+		$repository = $em->getRepository('RentMovieBundle:LogIn');
+		
 		if($request->getMethod()=='POST'){
+			$session->clear();
+		
 			$username=$request->get('login');
 			$password=$request->get('password');
 			
-			$em = $this->getDoctrine()->getEntityManager();
-			$repository = $em->getRepository('RentMovieBundle:LogIn');
-		
-			$user = $repository->findOneBy(array('login'=>$username,'password'=>$password));
-			if($user){
-				return $this->render('RentMovieBundle:Default:index.html.twig', array('name'=>$user->getName()));
+			$userr = $repository->findOneBy(array('login'=>$username,'password'=>$password));
+			if($userr){
+			$login=new Logout();
+			$login->setUsername($username);
+			$login->setPassword($password);
+			$session->set('login',$login);
+			/*	$session = $this->getRequest()->getSession();
+			$session->set('foo', $userr->getName());
+			$session->save();*/
+				return $this->render('RentMovieBundle:Default:index.html.twig', array('name'=>$userr->getName()));
 			}
 		}
 		else{
-		return $this->render('RentMovieBundle:Default:index.html.twig');
+			if($session->has('login')){
+				$login = $session->get('login');
+				$username=$login->getUsername();
+				$password=$login->getPassword();
+				$userr = $repository->findOneBy(array('login'=>$username,'password'=>$password));
+				if($userr){
+					return $this->render('RentMovieBundle:Default:index.html.twig', array('name'=>$userr->getName()));
+				}
+			}
+			return $this->render('RentMovieBundle:Default:index.html.twig');
 		}
 	}
 	public function registrationAction(Request $request){
@@ -49,7 +69,11 @@ class DefaultController extends Controller
 		}
 		return $this->render('RentMovieBundle:Default:registration.html.twig');
 	}
-<<<<<<< HEAD
+	public function logoutAction(Request $request){
+		$session=$this->getRequest()->getSession();
+		$session->clear();
+		return $this->render('RentMovieBundle:Default:index.html.twig');
+	}
 	public function prideAction(){
 		return $this->render('RentMovieBundle:Default:pride.html.twig');
 	}
@@ -86,7 +110,6 @@ class DefaultController extends Controller
 	public function lucyAction(){
 		return $this->render('RentMovieBundle:Default:lucy.html.twig');
 	}
-=======
 	public function melodramaAction()
     {
         return $this->render('RentMovieBundle:Default:melodrama.html.twig', array());
@@ -115,5 +138,4 @@ class DefaultController extends Controller
     {
         return $this->render('RentMovieBundle:Default:cartoon.html.twig', array());
     }
->>>>>>> 7dd633d27bdba3512b82ba79f537fc86573d34cb
 }

@@ -1,10 +1,12 @@
 rent_movie_main:
     path:     /main
     defaults: { _controller: RentMovieBundle:Default:main }
+rent_movie_logout:
+    path:     /logout
+    defaults: { _controller: RentMovieBundle:Default:logout }
 rent_movie_register:
     path:     /registration
     defaults: { _controller: RentMovieBundle:Default:registration }
-<<<<<<< HEAD
 rent_movie_pride:
     path:     /prideAndPrejudice
     defaults: { _controller: RentMovieBundle:Default:pride }
@@ -41,7 +43,6 @@ rent_movie_hobbitTwo:
 rent_movie_lucy:
     path:     /lucy
     defaults: { _controller: RentMovieBundle:Default:lucy }
-=======
 melodrama:
     path:     /melodrama
     defaults: { _controller: RentMovieBundle:Default:melodrama}
@@ -63,4 +64,3 @@ science:
 cartoon:
     path:     /cartoon
     defaults: { _controller: RentMovieBundle:Default:cartoon}
->>>>>>> 7dd633d27bdba3512b82ba79f537fc86573d34cb
