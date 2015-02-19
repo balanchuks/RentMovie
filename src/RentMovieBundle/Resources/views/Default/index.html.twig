@@ -32,7 +32,11 @@
 			background-color: rgba(203, 233, 247, 0.5);;
 			}
 		</style>
-		
+		<script type="text/javascript">
+		//	window.onbeforeunload = function() {
+		//	return "Bye now!";
+		//	};
+        </script>
 	</head>
 	<body>	
 		<div class="container-fluid">
@@ -113,21 +117,21 @@
 					</form>
 				{% endif %}
 					{% if name is defined %}
-						<div class="alert">
-							<strong>hello {{name}}</strong>
-							<a href="{{path('rent_movie_logout')}}">Logout</a>
+						<div align="right" class="alert">
+							<strong><p style="font-size:15px; display:inline">Welcome, {{name}}!</p></strong>
+							<a href="{{path('rent_movie_logout')}}" align="right">Logout</a>
 						</div>
 					{% endif %}
 
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#">Home</a></li>
-						<li><a href="{{path('melodrama')}}">Melodrama</a></li>
-						<li><a href="{{path('comedy')}}">Comedy</a></li>
-						<li><a href="{{path('drama')}}">Drama</a></li>
-						<li><a href="{{path('horror')}}">Horror</a></li>
-						<li><a href="{{path('fantasy')}}">Fantasy</a></li>
-						<li><a href="{{path('science')}}">Science fiction</a></li>
-						<li><a href="{{path('cartoon')}}">Cartoons</a></li>
+						<li><a href="{{path('rent_movie_melodramaGenre')}}">Melodrama</a></li>
+						<li><a href="{{path('rent_movie_comedyGenre')}}">Comedy</a></li>
+						<li><a href="{{path('rent_movie_dramaGenre')}}">Drama</a></li>
+						<li><a href="{{path('rent_movie_horrorGenre')}}">Horror</a></li>
+						<li><a href="{{path('rent_movie_fantasyGenre')}}">Fantasy</a></li>
+						<li><a href="{{path('rent_movie_scienceGenre')}}">Science fiction</a></li>
+						<li><a href="{{path('rent_movie_cartoonGenre')}}">Cartoons</a></li>
 					</ul>
 					
 					<div class="span8">
