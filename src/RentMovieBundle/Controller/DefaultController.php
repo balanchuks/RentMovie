@@ -138,4 +138,9 @@ class DefaultController extends Controller
     {
         return $this->render('RentMovieBundle:Default:cartoon.html.twig', array());
     }
+	
+	public function formAction()
+    {
+        return $this->render('RentMovieBundle:Default:form.html.twig', array());
+    }
 }
