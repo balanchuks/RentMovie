@@ -64,3 +64,6 @@ rent_movie_scienceGenre:
 rent_movie_cartoonGenre:
     path:     /cartoonGenre
     defaults: { _controller: RentMovieBundle:Default:cartoon}
+rent_movie_form:
+    path:     /form
+    defaults: { _controller: RentMovieBundle:Default:form}

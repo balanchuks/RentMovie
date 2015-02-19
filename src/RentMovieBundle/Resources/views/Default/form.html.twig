@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<HTML>
+	<head>
+		<title>Film Rental</title>
+		<meta charset="UTF-8">
+		<link href="{{ asset('bundles/rentmovie/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+		<style>
+		body {
+			margin-left: auto;
+			margin-right: auto;
+			width: 20%;
+			background-color: #FFFF99;
+		}
+		h2 {color: #006699}
+		label {
+			font-weight: bold;
+		}
+		</style>
+	</head>
+	<body left="25px">
+		<form class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('rent_movie_form')}}">
+			<h2>Payment form:</h2>
+			<label for="form">Payment form:</label>
+			<div class="radio">
+              <label>
+                 <input type="radio" name="optionsRadios" id="radio1" value="option1" checked>
+                    Payment by cash
+                 </label>
+                    </div>
+                  <div class="radio">
+                      <label>
+                   <input type="radio" name="optionsRadios" id="radio2" value="option2">
+                     Payment by credit card
+                       </label>
+                       </div>
+			<label for="term">Term:</label>
+			<input class="input-small" type="text"  name="term" id="term">
+			</br>
+			<label for="date">Payment date:</label>
+			<form class="form-inline">
+  <div class="form-group">
+    <input type="email" class="input-small" id="exampleInputEmail3" placeholder="DD">
+  </div>
+  </br>
+  <div class="form-group">
+    <input type="password" class="input-small" id="exampleInputPassword3" placeholder="MM">
+  </div>
+  </br>
+   <div class="form-group">
+    <input type="password" class="input-small" id="exampleInputPassword3" placeholder="YYYY">
+  </div>
+</form>
+			<button type="submit" class="btn btn-primary">Send</button>
+		</form>
+	</body>
+</HTML>
