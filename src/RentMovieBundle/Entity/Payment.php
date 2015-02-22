@@ -34,13 +34,6 @@ class Payment
     private $paymentdate;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="status", type="string", length=30, nullable=true)
-     */
-    private $status;
-
-    /**
      * @var integer
      *
      * @ORM\Column(name="paymentid", type="integer")
@@ -119,29 +112,6 @@ class Payment
     public function getPaymentdate()
     {
         return $this->paymentdate;
-    }
-
-    /**
-     * Set status
-     *
-     * @param string $status
-     * @return Payment
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return string 
-     */
-    public function getStatus()
-    {
-        return $this->status;
     }
 
     /**

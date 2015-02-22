@@ -117,9 +117,9 @@ class DefaultController extends Controller
 	}
 	public function mailAction(Request $request){
 			$session=$this->getRequest()->getSession();
-		$em = $this->getDoctrine()->getEntityManager();
-		$repository = $em->getRepository('RentMovieBundle:Client');
-		if($session->has('login')){
+			$em = $this->getDoctrine()->getEntityManager();
+			$repository = $em->getRepository('RentMovieBundle:Client');
+			if($session->has('login')){
 				$login = $session->get('login');
 				$username=$login->getUsername();
 				$password=$login->getPassword();
@@ -136,60 +136,46 @@ class DefaultController extends Controller
 				$year=$request->get('year');
 				
 				
-			if($radio=='option1')
-				$rb='cash';
-			else if($radio=='option2')
-				$rb='credit card';
-			$p1=$year."-".$month."-".$date;
-			$pd=\DateTime::createFromFormat('Y-m-d', $p1);
-				
-			
-				
-				
+				if($radio=='option1')
+					$rb='cash';
+				else if($radio=='option2')
+					$rb='credit card';
+				$p1=$year."-".$month."-".$date;
+				$pd=\DateTime::createFromFormat('Y-m-d', $p1);
 				
 				$userr = $repository->findOneBy(array('login'=>$username,'password'=>$password));
+				$repo = $em->getRepository('RentMovieBundle:Payment');
 			
+				$payment = new Payment();
+				$payment->setForm($rb);
+				$payment->setTerm($term);
+				$payment->setPaymentdate($pd);
 			
-			$repo = $em->getRepository('RentMovieBundle:Payment');
+				$em->persist($payment);
+				$em->flush();
+				
+				$pid = $payment->getPaymentid();
 			
-			$payment = new Payment();
-			$payment->setForm($rb);
-			$payment->setTerm($term);
-			$payment->setPaymentdate($pd);
-			if($pd<=date("Y-m-d"))
-			$status='paid';
-			
-			else if($pd>date("Y-m-d"))
-			$status='in progress';
-			
-			$payment->setStatus($status);
-			
-			$em->persist($payment);
-			$em->flush();
-			
-			
-			$pid = $payment->getPaymentid();
-			
-			
-			
-			$a=$_SERVER['HTTP_REFERER'];
-			$tokens = explode('/', $a);
-			$mid = $tokens[sizeof($tokens)-1];
-			$m=(int)$mid;
+				$a=$_SERVER['HTTP_REFERER'];
+				$tokens = explode('/', $a);
+				$mid = $tokens[sizeof($tokens)-1];
+				$m=(int)$mid;
+				
 				$q="Select clientID from client where login='$username'";
 				$r=pg_exec($con,$q);
 				$cid = pg_fetch_result($r, 0, 0);
 				$c=(int)$cid;
-			$con=pg_connect("host=sbazy user=s175519 dbname=s175519 password=s160596");
-			$query = "INSERT INTO orders(clientID, movieID, paymentID) VALUES ($c, $m, $pid);";
-			$r=pg_exec($con,$query);
+				
+				$con=pg_connect("host=sbazy user=s175519 dbname=s175519 password=s160596");
+				$query = "INSERT INTO orders(clientID, movieID, paymentID) VALUES ($c, $m, $pid);";
+				$r=pg_exec($con,$query);
 			
 			$url = 'https://mandrillapp.com/api/1.0/messages/send.json';
         	$params = [
             'message' => array(
                 'subject' => 'Rent Movie: Information according payment',
-                'text' => "Form of payment: ".$rb.". Term of payment: ".$term.". Date of payment: ".$p1."C: ".$c."M: ".$m."P: ".$pid,
-                'html' => '<p>'."Form of payment: ".$rb.". Term of payment: ".$term.". Date of payment: ".$p1."C: ".$c."M: ".$m."P: ".$pid.'</p>',
+                'text' => "Form of payment: ".$rb.". Term of payment: ".$term.". Date of payment: ".$p1,
+                'html' => '<p>'."Form of payment: ".$rb.". Term of payment: ".$term.". Date of payment: ".$p1.'</p>',
                 'from_email' => 'uek@no-replay.com',
                 'to' => array(
 						array(
@@ -211,28 +197,12 @@ class DefaultController extends Controller
 				$head = curl_exec($ch); 
 				$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
 				curl_close($ch); 
-				echo "<script type='text/javascript'>alert('Sending e-mail to address: $val. Form of payment: $rb Term of payment $term  Date of payment $p1 C:  $c M: $m P: $pid');</script>";
-			
+				echo "<script type='text/javascript'>alert('Sending e-mail to address: $val.');</script>";
 			return $this->render('RentMovieBundle:Default:index.html.twig', array('name'=>$userr->getName()));
 		}
 		else{
 		return $this->render('RentMovieBundle:Default:index.html.twig');
 		}
-	}
-	public function borrowedAction(){
-		$session=$this->getRequest()->getSession();
-		$em = $this->getDoctrine()->getEntityManager();
-		$repository = $em->getRepository('RentMovieBundle:Client');
-		if($session->has('login')){
-				$login = $session->get('login');
-				$username=$login->getUsername();
-				$password=$login->getPassword();
-				$userr = $repository->findOneBy(array('login'=>$username,'password'=>$password));
-				if($userr){
-					return $this->render('RentMovieBundle:Default:borrowed.html.twig', array('name'=>$userr->getName()));
-				}
-			}
-		return $this->render('RentMovieBundle:Default:borrowed.html.twig');
 	}
 	public function ordersAction(){
 		$session=$this->getRequest()->getSession();
@@ -243,11 +213,87 @@ class DefaultController extends Controller
 				$username=$login->getUsername();
 				$password=$login->getPassword();
 				$userr = $repository->findOneBy(array('login'=>$username,'password'=>$password));
+				
+				$con=pg_connect("host=sbazy user=s175519 dbname=s175519 password=s160596");
+				$q="select orderID,title,genre,paymentID,paymentDate from ((client right join orders using(clientID))left join movies using(movieID))right join payment using(paymentID) where login like '$username';";
+				$r=pg_exec($con,$q);
+				$rn=pg_numrows($r);
+				$cn=pg_numfields($r);
+				
+				print "<h2 align=\"center\">List of ordered movies:</h2><br/>";
+				if ($rn>0)
+				{
+					print "<table class=\"table table-hover\">";
+
+					print "<th>Order ID<th>Movie's title<th>Movie's genre<th>Payment ID<th>Status";
+
+					for ($j=0;$j<$rn;$j++)
+					{
+						print "<tr>";
+						for ($i=0;$i<$cn-1;$i++){
+							print "<td>".pg_result($r,$j,$i);
+							$pd=pg_result($r,$j,4);
+							if($pd<=date("Y-m-d"))
+								$status='Paid';
+							else if($pd>date("Y-m-d"))
+								$status='In progress';
+						}
+						print "<td>".$status;
+					}
+					print "</table>";
+				}
+				
 				if($userr){
 					return $this->render('RentMovieBundle:Default:orders.html.twig', array('name'=>$userr->getName()));
 				}
 			}
 		return $this->render('RentMovieBundle:Default:orders.html.twig');
+	}
+	public function borrowedAction(){
+		$session=$this->getRequest()->getSession();
+		$em = $this->getDoctrine()->getEntityManager();
+		$repository = $em->getRepository('RentMovieBundle:Client');
+		if($session->has('login')){
+				$login = $session->get('login');
+				$username=$login->getUsername();
+				$password=$login->getPassword();
+				$userr = $repository->findOneBy(array('login'=>$username,'password'=>$password));
+				
+				$con=pg_connect("host=sbazy user=s175519 dbname=s175519 password=s160596");
+				$q="select orderID,title,genre,paymentID,paymentDate from ((client right join orders using(clientID))left join movies using(movieID))right join payment using(paymentID) where login like '$username' and paymentDate<=now();";
+				$r=pg_exec($con,$q);
+				$rn=pg_numrows($r);
+				$cn=pg_numfields($r);
+				
+				print "<h2 align=\"center\">List of ordered movies:</h2><br/>";
+				if ($rn>0)
+				{
+					print "<table class=\"table table-hover\">";
+
+					print "<th>Order ID<th>Movie's title<th>Movie's genre<th>Payment ID";
+
+					for ($j=0;$j<$rn;$j++)
+					{
+						print "<tr>";
+						for ($i=0;$i<$cn-1;$i++){
+							print "<td>".pg_result($r,$j,$i);
+							$pd=pg_result($r,$j,4);
+						}
+						print "<form action=\"watch\">";
+						print "<td><button type=\"submit\" class=\"btn btn-primary\">Watch</button>";
+						print "</form>";
+					}
+					print "</table>";
+				}
+				
+				if($userr){
+					return $this->render('RentMovieBundle:Default:borrowed.html.twig', array('name'=>$userr->getName()));
+				}
+			}
+		return $this->render('RentMovieBundle:Default:borrowed.html.twig');
+	}
+	public function watchAction(){
+		return $this->render('RentMovieBundle:Default:watch.html.twig');
 	}
 	public function prideAction(){
 		$session=$this->getRequest()->getSession();

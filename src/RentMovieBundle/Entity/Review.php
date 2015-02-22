@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Review
  *
- * @ORM\Table(name="review", indexes={@ORM\Index(name="IDX_794381C67F98CD1C", columns={"clientid"}), @ORM\Index(name="IDX_794381C6EEF9E56", columns={"movieid"})})
+ * @ORM\Table(name="review", indexes={@ORM\Index(name="IDX_794381C6EEF9E56", columns={"movieid"})})
  * @ORM\Entity
  */
 class Review
@@ -29,6 +29,13 @@ class Review
     /**
      * @var integer
      *
+     * @ORM\Column(name="clientid", type="integer", nullable=false)
+     */
+    private $clientid;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="reviewid", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
@@ -45,16 +52,6 @@ class Review
      * })
      */
     private $movieid;
-
-    /**
-     * @var \RentMovieBundle\Entity\Client
-     *
-     * @ORM\ManyToOne(targetEntity="RentMovieBundle\Entity\Client")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="clientid", referencedColumnName="clientid")
-     * })
-     */
-    private $clientid;
 
 
 
@@ -105,6 +102,29 @@ class Review
     }
 
     /**
+     * Set clientid
+     *
+     * @param integer $clientid
+     * @return Review
+     */
+    public function setClientid($clientid)
+    {
+        $this->clientid = $clientid;
+
+        return $this;
+    }
+
+    /**
+     * Get clientid
+     *
+     * @return integer 
+     */
+    public function getClientid()
+    {
+        return $this->clientid;
+    }
+
+    /**
      * Get reviewid
      *
      * @return integer 
@@ -135,28 +155,5 @@ class Review
     public function getMovieid()
     {
         return $this->movieid;
-    }
-
-    /**
-     * Set clientid
-     *
-     * @param \RentMovieBundle\Entity\Client $clientid
-     * @return Review
-     */
-    public function setClientid(\RentMovieBundle\Entity\Client $clientid = null)
-    {
-        $this->clientid = $clientid;
-
-        return $this;
-    }
-
-    /**
-     * Get clientid
-     *
-     * @return \RentMovieBundle\Entity\Client 
-     */
-    public function getClientid()
-    {
-        return $this->clientid;
     }
 }

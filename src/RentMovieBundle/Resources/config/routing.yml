@@ -10,6 +10,9 @@ rent_movie_borrow:
 rent_movie_borrowed:
     path:     /borrowed
     defaults: { _controller: RentMovieBundle:Default:borrowed }
+rent_movie_watch:
+    path:     /watch
+    defaults: { _controller: RentMovieBundle:Default:watch }
 rent_movie_orders:
     path:     /orders
     defaults: { _controller: RentMovieBundle:Default:orders }

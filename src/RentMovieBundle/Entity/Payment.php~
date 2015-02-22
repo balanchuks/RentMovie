@@ -34,13 +34,6 @@ class Payment
     private $paymentdate;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="status", type="string", length=30, nullable=true)
-     */
-    private $status;
-
-    /**
      * @var integer
      *
      * @ORM\Column(name="paymentid", type="integer")

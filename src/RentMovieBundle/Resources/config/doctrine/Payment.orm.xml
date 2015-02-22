@@ -7,6 +7,5 @@
     <field name="form" type="string" column="form" length="20" nullable="true"/>
     <field name="term" type="integer" column="term" nullable="true"/>
     <field name="paymentdate" type="date" column="paymentdate" nullable="true"/>
-    <field name="status" type="string" column="status" length="30" nullable="true"/>
   </entity>
 </doctrine-mapping>
