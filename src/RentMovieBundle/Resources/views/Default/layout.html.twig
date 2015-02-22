@@ -59,10 +59,24 @@
 			}
 		</style>
 		<script>
-		 function pay() {
-    document.getElementById("pay").style.display="block";
-	document.getElementById("two").style.display="none";
-	document.getElementById("nine").style.display="none";}
+		function pay() {
+			document.getElementById("pay").style.display="block";
+			document.getElementById("two").style.display="none";
+			document.getElementById("nine").style.display="none";}
+		function back(){
+			document.getElementById("pay").style.display="none";
+			document.getElementById("two").style.display="block";
+			document.getElementById("nine").style.display="block";
+		}
+		function gopay() {
+			document.getElementById("add").style.display="block";
+			document.getElementById("two").style.display="none";
+			document.getElementById("nine").style.display="none";}
+		function goback(){
+			document.getElementById("add").style.display="none";
+			document.getElementById("two").style.display="block";
+			document.getElementById("nine").style.display="block";
+		}
 		</script>
 	</head>
 	<body>	
@@ -190,46 +204,57 @@
 							{% endblock %}
 							{% block price %}
 							{% endblock %}
-							<form class="form-horizontal"  enctype="multipart/form-data" method="POST">
-							<input type="button" onClick="pay()" class="btn btn-warning" value="Borrow!"/>
+							<form class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('rent_movie_borrow')}}">
+							{% if name is not defined %}<button type="submit" class="btn btn-warning">Borrow!</button>{% endif %}
+							{% if name is defined %}<input type="button" onClick="pay()" class="btn btn-warning" value="Borrow!"/>{% endif %}
+							{% if name is defined %}<input type="button" onClick="gopay()" class="btn btn-primary" value="Add a review"/>{% endif %}
 							</form>
 							{% block trailer %}
 							{% endblock %}
 						</div>
+						<form id="add" style="display:none" class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('rent_movie_review')}}">
+							<h2>Please, add a review:</h2>
+							<label for="moviereview"></label>
+							<textarea class="form-control" rows="10" name="moviereviews" id="moviereviews" placeholder="Type review here..."></textarea>
+							</br></br>
+							<button type="submit" class="btn btn-primary">Send</button>
+							<input type="button" onClick="goback()" class="btn" value="Go back">
+						</form>
 						<form id="pay" style="display:none" method="POST" action="{{path('rent_movie_mail')}}">
-			<h2>Payment form:</h2>
-			<label for="form">Payment form:</label>
-			<div class="radio">
-              <label>
-                 <input type="radio" name="optionsRadios" id="radio1" value="option1" checked>
-                    Payment by cash
-                 </label>
-                    </div>
-                  <div class="radio">
-                      <label>
-                   <input type="radio" name="optionsRadios" id="radio2" value="option2">
-                     Payment by credit card
-                       </label>
-                       </div>
-			<label for="term">Term:</label>
-			<input class="input-small" type="text"  name="term" id="term">
-			</br>
-			<label for="date">Payment date:</label>
-			
-				<div class="form-group">
-					<input class="input-small" name="date" onBlur="fdate(date)" placeholder="DD">
-				</div>
-				</br>
-				<div class="form-group">
-					<input class="input-small" name="month" onBlur="fmonth(month)"  placeholder="MM">
-				</div>
-				</br>
-				<div class="form-group">
-					<input class="input-small" name="year" onBlur="fyear(year)"  placeholder="YYYY">
-				</div><br/>
-			
-			<button type="submit" class="btn btn-primary">Send</button>
-		</form>	
+							<h2>Payment form:</h2>
+							<label for="form">Payment form:</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="radio1" value="option1" checked>
+									Payment by cash
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="optionsRadios" id="radio2" value="option2">
+									Payment by credit card
+								</label>
+						   </div>
+							<label for="term">Term:</label>
+							<input class="input-small" type="text"  name="term" id="term">
+							</br>
+							<label for="date">Payment date:</label>
+				
+							<div class="form-group">
+								<input class="input-small" name="date" onBlur="fdate(date)" placeholder="DD">
+							</div>
+							</br>
+							<div class="form-group">
+								<input class="input-small" name="month" onBlur="fmonth(month)"  placeholder="MM">
+							</div>
+							</br>
+							<div class="form-group">
+								<input class="input-small" name="year" onBlur="fyear(year)"  placeholder="YYYY">
+							</div><br/>
+				
+							<button type="submit" class="btn btn-primary">Send</button>
+							<input type="button" onClick="back()" class="btn" value="Go back">
+						</form>	
 					</div>		
 				</div>
 			</div>

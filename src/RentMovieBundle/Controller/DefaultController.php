@@ -93,27 +93,8 @@ class DefaultController extends Controller
 		$session->clear();
 		return $this->render('RentMovieBundle:Default:index.html.twig');
 	}
-	public function borrowAction(){
-		$a=$_SERVER['HTTP_REFERER'];
-			$tokens = explode('/', $a);
-			$this->mid = $tokens[sizeof($tokens)-1];
-			
-		$session=$this->getRequest()->getSession();
-		$em = $this->getDoctrine()->getEntityManager();
-		$repository = $em->getRepository('RentMovieBundle:Client');
-		if($session->has('login')){
-				$login = $session->get('login');
-				$username=$login->getUsername();
-				$password=$login->getPassword();
-				$userr = $repository->findOneBy(array('login'=>$username,'password'=>$password));
-				$session->set('idd',$this->mid);
-				if($userr){
-					return $this->render('RentMovieBundle:Default:form.html.twig', array('name'=>$userr->getName()));
-				}
-			}
-		else{
+	public function borrowAction(){			
 		return $this->render('RentMovieBundle:Default:cantBorrow.html.twig');
-		}
 	}
 	public function mailAction(Request $request){
 			$session=$this->getRequest()->getSession();
@@ -197,11 +178,11 @@ class DefaultController extends Controller
 				$head = curl_exec($ch); 
 				$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
 				curl_close($ch); 
-				echo "<script type='text/javascript'>alert('Sending e-mail to address: $val.');</script>";
-			return $this->render('RentMovieBundle:Default:index.html.twig', array('name'=>$userr->getName()));
+				//echo "<script type='text/javascript'>alert('Sending e-mail to address: $val.');</script>";
+			return $this->render('RentMovieBundle:Default:mail.html.twig', array('name'=>$userr->getName()));
 		}
 		else{
-		return $this->render('RentMovieBundle:Default:index.html.twig');
+		return $this->render('RentMovieBundle:Default:mail.html.twig');
 		}
 	}
 	public function ordersAction(){
@@ -294,6 +275,77 @@ class DefaultController extends Controller
 	}
 	public function watchAction(){
 		return $this->render('RentMovieBundle:Default:watch.html.twig');
+	}
+	public function reviewAction(Request $request){
+		$session=$this->getRequest()->getSession();
+		$em = $this->getDoctrine()->getEntityManager();
+		$repository = $em->getRepository('RentMovieBundle:Client');
+		
+		if($session->has('login')){
+				$login = $session->get('login');
+				$username=$login->getUsername();
+				$password=$login->getPassword();
+				$userr = $repository->findOneBy(array('login'=>$username,'password'=>$password));
+				
+				$a=$_SERVER['HTTP_REFERER'];
+				$tokens = explode('/', $a);
+				$mid = $tokens[sizeof($tokens)-1];
+				$m=(int)$mid;
+				
+				$con=pg_connect("host=sbazy user=s175519 dbname=s175519 password=s160596");
+				$q="Select clientID from client where login='$username'";
+				$r=pg_exec($con,$q);
+				$cid = pg_fetch_result($r, 0, 0);
+				$c=(int)$cid;
+				
+				$rv=$request->get('moviereviews');
+				
+				$query = "INSERT INTO review(moviereviews, clientid, movieid) VALUES ('$rv', $c, $m);";
+				$r=pg_exec($con,$query);
+				echo "<script type='text/javascript'>alert('Review was successfully added!');</script>";
+				switch($mid){
+					case 1:
+						$mo='pride';
+						break;
+					case 2:
+						$mo='penguins';
+						break;
+					case 3:
+						$mo='sinister';
+						break;
+					case 4:
+						$mo='dragon';
+						break;
+					case 5:
+						$mo='game';
+						break;
+					case 6:
+						$mo='lucy';
+						break;
+					case 7:
+						$mo='conjuring';
+						break;
+					case 8:
+						$mo='mind';
+						break;
+					case 9:
+						$mo='bean';
+						break;
+					case 10:
+						$mo='words';
+						break;
+					case 11:
+						$mo='hobbit1';
+						break;
+					case 12:
+						$mo='hobbit2';
+						break;
+				}
+				
+				if($userr){
+					return $this->render("RentMovieBundle:Default:$mo.html.twig", array('name'=>$userr->getName()));
+				}
+			}
 	}
 	public function prideAction(){
 		$session=$this->getRequest()->getSession();

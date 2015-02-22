@@ -4,6 +4,9 @@ rent_movie_main:
 rent_movie_logout:
     path:     /logout
     defaults: { _controller: RentMovieBundle:Default:logout }
+rent_movie_review:
+    path:     /review
+    defaults: { _controller: RentMovieBundle:Default:review }
 rent_movie_borrow:
     path:     /borrow
     defaults: { _controller: RentMovieBundle:Default:borrow }
