@@ -56,9 +56,10 @@
 			width:100%;
 			text-align:center;
 			}
-			
 			a.white {color:#fff;}
-			
+			form.a {
+			display: inline;
+			}
 		</style>
 		
 		
@@ -145,8 +146,14 @@
 				{% endif %}
 					{% if name is defined %}
 						<div align="right" class="alert">
-							<strong><p class="con">Welcome, {{name}}!</p></strong>
+							<strong><p style="font-size:15px; display:inline">Welcome, {{name}}!</p></strong>
 							<a href="{{path('rent_movie_logout')}}" align="right">Logout</a>
+							<form class="a"  enctype="multipart/form-data" align="right" method="POST" action="{{path('rent_movie_orders')}}">
+								<button type="submit" class="btn btn-warning">List of orders</button>
+							</form>
+							<form class="a"  enctype="multipart/form-data" align="right" method="POST" action="{{path('rent_movie_borrowed')}}">
+								<button type="submit" class="btn btn-warning">List of borrowed</button>
+							</form>
 						</div>
 					{% endif %}
 

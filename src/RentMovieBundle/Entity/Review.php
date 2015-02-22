@@ -5,32 +5,36 @@ namespace RentMovieBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Orders
+ * Review
  *
- * @ORM\Table(name="orders", indexes={@ORM\Index(name="IDX_E52FFDEE7F98CD1C", columns={"clientid"}), @ORM\Index(name="IDX_E52FFDEEEEF9E56", columns={"movieid"}), @ORM\Index(name="IDX_E52FFDEEE042330C", columns={"paymentid"})})
+ * @ORM\Table(name="review", indexes={@ORM\Index(name="IDX_794381C67F98CD1C", columns={"clientid"}), @ORM\Index(name="IDX_794381C6EEF9E56", columns={"movieid"})})
  * @ORM\Entity
  */
-class Orders
+class Review
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="orderid", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="SEQUENCE")
-     * @ORM\SequenceGenerator(sequenceName="orders_orderid_seq", allocationSize=1, initialValue=1)
+     * @ORM\Column(name="ratingreviews", type="integer", nullable=true)
      */
-    private $orderid;
+    private $ratingreviews;
 
     /**
-     * @var \RentMovieBundle\Entity\Payment
+     * @var string
      *
-     * @ORM\ManyToOne(targetEntity="RentMovieBundle\Entity\Payment")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="paymentid", referencedColumnName="paymentid")
-     * })
+     * @ORM\Column(name="moviereviews", type="string", length=255, nullable=true)
      */
-    private $paymentid;
+    private $moviereviews;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reviewid", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="review_reviewid_seq", allocationSize=1, initialValue=1)
+     */
+    private $reviewid;
 
     /**
      * @var \RentMovieBundle\Entity\Movies
@@ -55,43 +59,66 @@ class Orders
 
 
     /**
-     * Get orderid
+     * Set ratingreviews
      *
-     * @return integer 
+     * @param integer $ratingreviews
+     * @return Review
      */
-    public function getOrderid()
+    public function setRatingreviews($ratingreviews)
     {
-        return $this->orderid;
-    }
-
-    /**
-     * Set paymentid
-     *
-     * @param \RentMovieBundle\Entity\Payment $paymentid
-     * @return Orders
-     */
-    public function setPaymentid(\RentMovieBundle\Entity\Payment $paymentid = null)
-    {
-        $this->paymentid = $paymentid;
+        $this->ratingreviews = $ratingreviews;
 
         return $this;
     }
 
     /**
-     * Get paymentid
+     * Get ratingreviews
      *
-     * @return \RentMovieBundle\Entity\Payment 
+     * @return integer 
      */
-    public function getPaymentid()
+    public function getRatingreviews()
     {
-        return $this->paymentid;
+        return $this->ratingreviews;
+    }
+
+    /**
+     * Set moviereviews
+     *
+     * @param string $moviereviews
+     * @return Review
+     */
+    public function setMoviereviews($moviereviews)
+    {
+        $this->moviereviews = $moviereviews;
+
+        return $this;
+    }
+
+    /**
+     * Get moviereviews
+     *
+     * @return string 
+     */
+    public function getMoviereviews()
+    {
+        return $this->moviereviews;
+    }
+
+    /**
+     * Get reviewid
+     *
+     * @return integer 
+     */
+    public function getReviewid()
+    {
+        return $this->reviewid;
     }
 
     /**
      * Set movieid
      *
      * @param \RentMovieBundle\Entity\Movies $movieid
-     * @return Orders
+     * @return Review
      */
     public function setMovieid(\RentMovieBundle\Entity\Movies $movieid = null)
     {
@@ -114,7 +141,7 @@ class Orders
      * Set clientid
      *
      * @param \RentMovieBundle\Entity\Client $clientid
-     * @return Orders
+     * @return Review
      */
     public function setClientid(\RentMovieBundle\Entity\Client $clientid = null)
     {

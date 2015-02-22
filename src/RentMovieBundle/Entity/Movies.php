@@ -7,116 +7,85 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Movies
  *
- * @ORM\Table()
+ * @ORM\Table(name="movies")
  * @ORM\Entity
  */
 class Movies
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=30, nullable=true)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="genre", type="string", length=255)
+     * @ORM\Column(name="genre", type="string", length=20, nullable=true)
      */
     private $genre;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="year", type="integer")
+     * @ORM\Column(name="year", type="integer", nullable=true)
      */
     private $year;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="actors", type="string", length=255)
+     * @ORM\Column(name="actors", type="string", length=100, nullable=true)
      */
     private $actors;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="string", length=255, nullable=true)
      */
     private $description;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="ratingBorrowed", type="integer")
+     * @ORM\Column(name="ratingborrowed", type="integer", nullable=true)
      */
-    private $ratingBorrowed;
+    private $ratingborrowed;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cover", type="string", length=255)
+     * @ORM\Column(name="cover", type="string", length=50, nullable=true)
      */
     private $cover;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="trailer", type="string", length=255)
+     * @ORM\Column(name="trailer", type="string", length=50, nullable=true)
      */
     private $trailer;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="borrowingPrice", type="float")
+     * @ORM\Column(name="borrowingprice", type="float", precision=10, scale=0, nullable=true)
      */
-    private $borrowingPrice;
-
+    private $borrowingprice;
 
     /**
-     * Get id
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="movieid", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="movies_movieid_seq", allocationSize=1, initialValue=1)
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $movieid;
 
-    /**
-     * Set movieId
-     *
-     * @param integer $movieId
-     * @return Movies
-     */
-    public function setMovieId($movieId)
-    {
-        $this->movieId = $movieId;
 
-        return $this;
-    }
-
-    /**
-     * Get movieId
-     *
-     * @return integer 
-     */
-    public function getMovieId()
-    {
-        return $this->movieId;
-    }
 
     /**
      * Set title
@@ -234,26 +203,26 @@ class Movies
     }
 
     /**
-     * Set ratingBorrowed
+     * Set ratingborrowed
      *
-     * @param integer $ratingBorrowed
+     * @param integer $ratingborrowed
      * @return Movies
      */
-    public function setRatingBorrowed($ratingBorrowed)
+    public function setRatingborrowed($ratingborrowed)
     {
-        $this->ratingBorrowed = $ratingBorrowed;
+        $this->ratingborrowed = $ratingborrowed;
 
         return $this;
     }
 
     /**
-     * Get ratingBorrowed
+     * Get ratingborrowed
      *
      * @return integer 
      */
-    public function getRatingBorrowed()
+    public function getRatingborrowed()
     {
-        return $this->ratingBorrowed;
+        return $this->ratingborrowed;
     }
 
     /**
@@ -303,25 +272,35 @@ class Movies
     }
 
     /**
-     * Set borrowingPrice
+     * Set borrowingprice
      *
-     * @param float $borrowingPrice
+     * @param float $borrowingprice
      * @return Movies
      */
-    public function setBorrowingPrice($borrowingPrice)
+    public function setBorrowingprice($borrowingprice)
     {
-        $this->borrowingPrice = $borrowingPrice;
+        $this->borrowingprice = $borrowingprice;
 
         return $this;
     }
 
     /**
-     * Get borrowingPrice
+     * Get borrowingprice
      *
      * @return float 
      */
-    public function getBorrowingPrice()
+    public function getBorrowingprice()
     {
-        return $this->borrowingPrice;
+        return $this->borrowingprice;
+    }
+
+    /**
+     * Get movieid
+     *
+     * @return integer 
+     */
+    public function getMovieid()
+    {
+        return $this->movieid;
     }
 }

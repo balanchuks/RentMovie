@@ -4,44 +4,53 @@ rent_movie_main:
 rent_movie_logout:
     path:     /logout
     defaults: { _controller: RentMovieBundle:Default:logout }
+rent_movie_borrow:
+    path:     /borrow
+    defaults: { _controller: RentMovieBundle:Default:borrow }
+rent_movie_borrowed:
+    path:     /borrowed
+    defaults: { _controller: RentMovieBundle:Default:borrowed }
+rent_movie_orders:
+    path:     /orders
+    defaults: { _controller: RentMovieBundle:Default:orders }
 rent_movie_register:
     path:     /registration
     defaults: { _controller: RentMovieBundle:Default:registration }
 rent_movie_pride:
-    path:     /prideAndPrejudice
+    path:     /1
     defaults: { _controller: RentMovieBundle:Default:pride }
 rent_movie_game:
-    path:     /theImitationGame
+    path:     /5
     defaults: { _controller: RentMovieBundle:Default:game }
 rent_movie_bean:
-    path:     /mrBean
+    path:     /9
     defaults: { _controller: RentMovieBundle:Default:bean }
 rent_movie_mind:
-    path:     /aBeautifulMind
+    path:     /8
     defaults: { _controller: RentMovieBundle:Default:mind }
 rent_movie_words:
-    path:     /aThousandWords
+    path:     /10
     defaults: { _controller: RentMovieBundle:Default:words }
 rent_movie_penguins:
-    path:     /penguinsOgMadagascar
+    path:     /2
     defaults: { _controller: RentMovieBundle:Default:penguins }
 rent_movie_dragon:
-    path:     /howToTrainYourDragon
+    path:     /4
     defaults: { _controller: RentMovieBundle:Default:dragon }
 rent_movie_sinister:
-    path:     /sinister
+    path:     /3
     defaults: { _controller: RentMovieBundle:Default:sinister }
 rent_movie_conjuring:
-    path:     /theConjuring
+    path:     /7
     defaults: { _controller: RentMovieBundle:Default:conjuring }
 rent_movie_hobbitOne:
-    path:     /hobbitAnUnexpectedJourney
+    path:     /11
     defaults: { _controller: RentMovieBundle:Default:hobbitOne }
 rent_movie_hobbitTwo:
-    path:     /hobbitTheDesolationOfSmaug
+    path:     /12
     defaults: { _controller: RentMovieBundle:Default:hobbitTwo }
 rent_movie_lucy:
-    path:     /lucy
+    path:     /6
     defaults: { _controller: RentMovieBundle:Default:lucy }
 rent_movie_melodramaGenre:
     path:     /melodramaGenre
@@ -64,3 +73,9 @@ rent_movie_scienceGenre:
 rent_movie_cartoonGenre:
     path:     /cartoonGenre
     defaults: { _controller: RentMovieBundle:Default:cartoon}
+rent_movie_form:
+    path:     /form
+    defaults: { _controller: RentMovieBundle:Default:form}
+rent_movie_mail:
+    path:     /mail
+    defaults: { _controller: RentMovieBundle:Default:mail}

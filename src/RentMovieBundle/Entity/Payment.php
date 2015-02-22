@@ -7,88 +7,50 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Payment
  *
- * @ORM\Table()
+ * @ORM\Table(name="payment")
  * @ORM\Entity
  */
 class Payment
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="form", type="string", length=255)
+     * @ORM\Column(name="form", type="string", length=20, nullable=true)
      */
     private $form;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="term", type="integer")
+     * @ORM\Column(name="term", type="integer", nullable=true)
      */
     private $term;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="paymentDate", type="date")
+     * @ORM\Column(name="paymentdate", type="date", nullable=true)
      */
-    private $paymentDate;
+    private $paymentdate;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="status", type="string", length=255)
+     * @ORM\Column(name="status", type="string", length=30, nullable=true)
      */
     private $status;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="orderId", type="integer")
+     * @ORM\Column(name="paymentid", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="payment_paymentid_seq", allocationSize=1, initialValue=1)
      */
-    private $orderId;
+    private $paymentid;
 
 
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set paymentId
-     *
-     * @param integer $paymentId
-     * @return Payment
-     */
-    public function setPaymentId($paymentId)
-    {
-        $this->paymentId = $paymentId;
-
-        return $this;
-    }
-
-    /**
-     * Get paymentId
-     *
-     * @return integer 
-     */
-    public function getPaymentId()
-    {
-        return $this->paymentId;
-    }
 
     /**
      * Set form
@@ -137,26 +99,26 @@ class Payment
     }
 
     /**
-     * Set paymentDate
+     * Set paymentdate
      *
-     * @param \DateTime $paymentDate
+     * @param \DateTime $paymentdate
      * @return Payment
      */
-    public function setPaymentDate($paymentDate)
+    public function setPaymentdate($paymentdate)
     {
-        $this->paymentDate = $paymentDate;
+        $this->paymentdate = $paymentdate;
 
         return $this;
     }
 
     /**
-     * Get paymentDate
+     * Get paymentdate
      *
      * @return \DateTime 
      */
-    public function getPaymentDate()
+    public function getPaymentdate()
     {
-        return $this->paymentDate;
+        return $this->paymentdate;
     }
 
     /**
@@ -183,25 +145,12 @@ class Payment
     }
 
     /**
-     * Set orderId
-     *
-     * @param integer $orderId
-     * @return Payment
-     */
-    public function setOrderId($orderId)
-    {
-        $this->orderId = $orderId;
-
-        return $this;
-    }
-
-    /**
-     * Get orderId
+     * Get paymentid
      *
      * @return integer 
      */
-    public function getOrderId()
+    public function getPaymentid()
     {
-        return $this->orderId;
+        return $this->paymentid;
     }
 }
