@@ -67,3 +67,6 @@ rent_movie_cartoonGenre:
 rent_movie_form:
     path:     /form
     defaults: { _controller: RentMovieBundle:Default:form}
+rent_movie_review:
+    path:     /review
+    defaults: { _controller: RentMovieBundle:Default:review}

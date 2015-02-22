@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<HTML>
+	<head>
+		<title>Film Rental</title>
+		<meta charset="UTF-8">
+		<link href="{{ asset('bundles/rentmovie/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+		<link href="{{ asset('bundles/rentmovie/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+		<style>
+		body {
+			margin-left: 350px;
+			margin-right: auto;
+			width: 30%;
+			background-color: #FFFF99;
+		}
+		h2 {color: #006699}
+		label {
+			font-weight: bold;
+		}
+		 .form-control {
+        width: 150%;
+    }
+		</style>
+
+	</head>
+	<body left="25px">
+		<form class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('rent_movie_review')}}">
+			<h2>Please, add a review:</h2>
+			<label for="moviereview"></label>
+			<textarea class="form-control" rows="10" name="moviereviews" id="moviereviews" placeholder="Type review here..."></textarea>
+             </br></br>
+               <button type="submit" class="btn btn-primary">Send</button>
+		</form>
+		{%if name is defined%}
+			<div class="alert">
+				<strong>hello {{name}}</strong>
+			</div>
+		{%endif%}
+	</body>
+</HTML>

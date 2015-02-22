@@ -152,7 +152,16 @@
 							{% endblock %}
 							{% block price %}
 							{% endblock %}
-							<a href="{{path('rent_movie_form')}}"><button type="submit" class="btn btn-warning">Borrow!</button><br/><br/></a>
+							<div class="span2">
+							<form class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('rent_movie_borrow')}}">
+							<button type="submit" class="btn btn-warning col-md-5">Borrow!</button><br/>
+							</form>
+	                            </div>
+							{% if name is defined %}
+							<form class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('rent_movie_review')}}">
+						<a href="{{path('rent_movie_review')}}"><button type="submit" class="btn btn-warning col-md-5">Add a review</button></a>
+		                </form>
+							{% endif %}
 							{% block trailer %}
 							{% endblock %}
 						</div>

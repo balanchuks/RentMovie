@@ -370,4 +370,8 @@ class DefaultController extends Controller
     {
         return $this->render('RentMovieBundle:Default:form.html.twig', array());
     }
+	public function reviewAction()
+    {
+        return $this->render('RentMovieBundle:Default:review.html.twig', array());
+    }
 }
